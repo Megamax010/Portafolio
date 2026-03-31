@@ -371,7 +371,7 @@
             white-space: nowrap;
             vertical-align: bottom;
             border-right: 2px solid transparent;
-            animation: typing-title-2 1.5s steps(20, end) 1.2s forwards, blink-cursor 0.75s step-end infinite 1.2s;
+            animation: typing-title-2 1.5s steps(20, end) 1.2s forwards, blink-cursor 0.5s step-end 6 1.2s forwards;
             max-width: 0;
             opacity: 0;
         }
@@ -414,9 +414,14 @@
         }
 
         @keyframes blink-cursor {
+
+            0%,
+            100% {
+                border-right-color: transparent;
+            }
+
             50% {
-                border-color: transparent;
-                opacity: 0;
+                border-right-color: #3b82f6;
             }
         }
     </style>
@@ -541,12 +546,16 @@
                         <span class="hero-title-1" data-i18n="hero_hi">Hi, I'm</span>
                         <span class="text-gradient hero-title-2">Bruno López</span>
                     </h1>
-                    <p class="text-xl text-gray-400 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed typewriter-desc"
-                        data-i18n="hero_desc">
-                        Systems Engineering student focused on <span class="text-white font-semibold">software
-                            development</span> and its architecture. I create applications and turn ideas into
-                        functional solutions.
-                    </p>
+                    <div class="relative max-w-xl mx-auto lg:mx-0 mb-8 pt-2">
+                        <p class="text-xl leading-relaxed opacity-0 select-none" aria-hidden="true"
+                            data-i18n="hero_desc">
+                            Systems Engineering student focused on <span class="text-white font-semibold">software
+                                development</span> and its architecture. I create applications and turn ideas into
+                            functional solutions.
+                        </p>
+                        <p class="text-xl text-gray-400 leading-relaxed typewriter-desc absolute top-0 left-0 w-full">
+                        </p>
+                    </div>
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <a href="#projects"
@@ -627,37 +636,187 @@
                     <div class="w-20 h-1 bg-brand-500 mx-auto rounded-full" aria-hidden="true"></div>
                 </div>
 
-                <div class="glass-card p-8 md:p-12 rounded-2xl reveal w-full flex flex-wrap justify-center gap-3">
-                    <span class="skill-tag" data-i18n="skill_se">Systems Engineering</span>
-                    <span class="skill-tag" data-i18n="skill_os">Operating Systems</span>
-                    <span class="skill-tag" data-i18n="skill_sa">Server Administration</span>
-                    <span class="skill-tag" data-i18n="skill_arch">Software Architecture</span>
-                    <span class="skill-tag" data-i18n="skill_design">Software Design</span>
-                    <span class="skill-tag" data-i18n="skill_xam">Xamarin</span>
-                    <span class="skill-tag" data-i18n="skill_kot">Kotlin</span>
-                    <span class="skill-tag" data-i18n="skill_andstu">Android Studio</span>
-                    <span class="skill-tag" data-i18n="skill_anddev">Android Development</span>
-                    <span class="skill-tag" data-i18n="skill_ai">Artificial Intelligence</span>
-                    <span class="skill-tag" data-i18n="skill_prompt">AI Prompting</span>
-                    <span class="skill-tag" data-i18n="skill_data">Data Analysis</span>
-                    <span class="skill-tag" data-i18n="skill_linux">Linux</span>
-                    <span class="skill-tag" data-i18n="skill_ubuntu">Ubuntu</span>
-                    <span class="skill-tag" data-i18n="skill_sql">Microsoft SQL Server</span>
-                    <span class="skill-tag" data-i18n="skill_vs">Visual Studio</span>
-                    <span class="skill-tag" data-i18n="skill_csharp">Visual C#</span>
-                    <span class="skill-tag" data-i18n="skill_vb">Visual Basic .NET</span>
-                    <span class="skill-tag" data-i18n="skill_vscode">Visual Studio Code</span>
-                    <span class="skill-tag" data-i18n="skill_ts">Tech Support</span>
-                    <span class="skill-tag" data-i18n="skill_ps">Problem Solving</span>
-                    <span class="skill-tag" data-i18n="skill_trans">EN-ES Translation</span>
-                    <span class="skill-tag" data-i18n="skill_eng">English B2-C1</span>
-                    <span class="skill-tag" data-i18n="skill_virt">Virtualization</span>
-                    <span class="skill-tag" data-i18n="skill_office">Microsoft Office</span>
-                    <span class="skill-tag" data-i18n="skill_ppt">Microsoft PowerPoint</span>
-                    <span class="skill-tag" data-i18n="skill_word">Microsoft Word</span>
-                    <span class="skill-tag" data-i18n="skill_canva">Canva</span>
-                    <span class="skill-tag" data-i18n="skill_andtest">Android Testing</span>
-                    <span class="skill-tag" data-i18n="skill_and">Android</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 0ms;">
+                        <i class="ri-computer-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_se_t">Systems Engineering</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_se_d">Focus on software
+                            architecture, algorithms, and systems analysis.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 100ms;">
+                        <i class="ri-window-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_os_t">Operating Systems</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_os_d">Deep understanding of OS
+                            internals, resource management, and file systems.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 200ms;">
+                        <i class="ri-server-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_sa_t">Server Administration</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_sa_d">Setup, maintenance, and
+                            security of local and remote web servers.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 300ms;">
+                        <i class="ri-layout-masonry-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_arch_t">Software Architecture</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_arch_d">Design of scalable,
+                            maintainable, and robust application structures.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 0ms;">
+                        <i class="ri-quill-pen-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_design_t">Software Design</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_design_d">Creating technical
+                            diagrams, UI/UX flow, and logic blueprints.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 100ms;">
+                        <i class="ri-android-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_anddev_t">Android Development</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_anddev_d">Building native mobile
+                            applications with intuitive interfaces.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 200ms;">
+                        <i class="ri-smartphone-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_xam_t">Xamarin</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_xam_d">Cross-platform mobile
+                            development using C# and .NET framework.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 300ms;">
+                        <i class="ri-braces-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_kot_t">Kotlin</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_kot_d">Modern, concise
+                            programming for robust Android applications.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 0ms;">
+                        <i class="ri-code-s-slash-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_andstu_t">Android Studio</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_andstu_d">Profiling, debugging,
+                            and building complex mobile projects.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 100ms;">
+                        <i class="ri-test-tube-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_andtest_t">Android Testing</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_andtest_d">Ensuring app stability
+                            through unit and UI automated tests.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 200ms;">
+                        <i class="ri-google-play-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_and_t">Android</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_and_d">Deep knowledge of the
+                            Android ecosystem and lifecycle.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 300ms;">
+                        <i class="ri-brain-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_ai_t">Artificial Intelligence</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_ai_d">Integration of AI models
+                            and tools to automate complex tasks.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 0ms;">
+                        <i class="ri-chat-voice-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_prompt_t">AI Prompting</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_prompt_d">Crafting precise
+                            instructions for LLMs to generate high-quality outputs.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 100ms;">
+                        <i class="ri-bar-chart-box-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_data_t">Data Analysis</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_data_d">Extracting insights from
+                            datasets to aid in decision-making.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 200ms;">
+                        <i class="ri-ubuntu-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_linux_t">Linux</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_linux_d">Command-line proficiency
+                            and system administration.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 300ms;">
+                        <i class="ri-ubuntu-fill text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_ubuntu_t">Ubuntu</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_ubuntu_d">Experience managing and
+                            configuring Ubuntu-based environments.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 0ms;">
+                        <i class="ri-database-2-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_sql_t">Microsoft SQL Server</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_sql_d">Designing relational
+                            databases and optimizing complex queries.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 100ms;">
+                        <i class="ri-window-fill text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_vs_t">Visual Studio</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_vs_d">Primary IDE for
+                            comprehensive C# and .NET development.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 200ms;">
+                        <i class="ri-code-box-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_csharp_t">Visual C#</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_csharp_d">Object-oriented
+                            programming for desktop and backend solutions.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 300ms;">
+                        <i class="ri-terminal-window-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_vb_t">Visual Basic .NET</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_vb_d">Developing legacy and rapid
+                            prototyping enterprise software.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 0ms;">
+                        <i class="ri-code-view text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_vscode_t">Visual Studio Code</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_vscode_d">Lightweight, versatile
+                            editor configured for web and scripts.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 100ms;">
+                        <i class="ri-customer-service-2-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_ts_t">Tech Support</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_ts_d">Diagnosing
+                            hardware/software issues and providing effective solutions.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 200ms;">
+                        <i class="ri-lightbulb-flash-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_ps_t">Problem Solving</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_ps_d">Analytical mindset applied
+                            to troubleshooting operational challenges.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 300ms;">
+                        <i class="ri-translate text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_trans_t">EN-ES Translation</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_trans_d">Accurate technical and
+                            general translation between English and Spanish.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 0ms;">
+                        <i class="ri-global-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_eng_t">Languages</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_eng_d">Native Spanish. 95%
+                            reading/writing in English, basic conversational English.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 100ms;">
+                        <i class="ri-cloud-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_virt_t">Virtualization</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_virt_d">Creating and managing
+                            virtual machines for testing isolated systems.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 200ms;">
+                        <i class="ri-survey-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_office_t">Microsoft Office</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_office_d">Advanced use of the
+                            suite for documentation and data management.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 300ms;">
+                        <i class="ri-slideshow-2-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_ppt_t">Microsoft PowerPoint</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_ppt_d">Designing engaging
+                            technical and professional presentations.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 0ms;">
+                        <i class="ri-file-word-2-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_word_t">Microsoft Word</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_word_d">Crafting structured
+                            specs, reports, and system manuals.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl reveal text-center" style="transition-delay: 100ms;">
+                        <i class="ri-brush-3-line text-3xl text-brand-400 mb-3 block" aria-hidden="true"></i>
+                        <h3 class="text-md font-bold mb-2" data-i18n="sk_canva_t">Canva</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="sk_canva_d">Creating appealing
+                            visual assets, infographics, and UI mockups.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1046,36 +1205,66 @@
                         about_p4: "Driven by a natural curiosity for technology, history, economics, operating systems, and continuous learning, I am actively improving my speaking and writing skills. Likewise, I am expanding my knowledge in modern web development, creating web applications with complete integration.",
                         about_p5: "I actively seek opportunities to apply my skills, expand my knowledge, grow professionally, and contribute meaningful value in innovative projects.",
                         skills_title: "Skills",
-                        skill_se: "Systems Engineering",
-                        skill_os: "Operating Systems",
-                        skill_sa: "Server Administration",
-                        skill_arch: "Software Architecture",
-                        skill_design: "Software Design",
-                        skill_xam: "Xamarin",
-                        skill_kot: "Kotlin",
-                        skill_andstu: "Android Studio",
-                        skill_anddev: "Android Development",
-                        skill_ai: "Artificial Intelligence",
-                        skill_prompt: "AI Prompting",
-                        skill_data: "Data Analysis",
-                        skill_linux: "Linux",
-                        skill_ubuntu: "Ubuntu",
-                        skill_sql: "Microsoft SQL Server",
-                        skill_vs: "Visual Studio",
-                        skill_csharp: "Visual C#",
-                        skill_vb: "Visual Basic .NET",
-                        skill_vscode: "Visual Studio Code",
-                        skill_ts: "Tech Support",
-                        skill_ps: "Problem Solving",
-                        skill_trans: "EN-ES Translation",
-                        skill_eng: "English B2-C1",
-                        skill_virt: "Virtualization",
-                        skill_office: "Microsoft Office",
-                        skill_ppt: "Microsoft PowerPoint",
-                        skill_word: "Microsoft Word",
-                        skill_canva: "Canva",
-                        skill_andtest: "Android Testing",
-                        skill_and: "Android",
+                        sk_se_t: "Systems Engineering",
+                        sk_se_d: "Focus on software architecture, algorithms, and systems analysis.",
+                        sk_os_t: "Operating Systems",
+                        sk_os_d: "Deep understanding of OS internals, resource management, and file systems.",
+                        sk_sa_t: "Server Administration",
+                        sk_sa_d: "Setup, maintenance, and security of local and remote web servers.",
+                        sk_arch_t: "Software Architecture",
+                        sk_arch_d: "Design of scalable, maintainable, and robust application structures.",
+                        sk_design_t: "Software Design",
+                        sk_design_d: "Creating technical diagrams, UI/UX flow, and logic blueprints.",
+                        sk_anddev_t: "Android Development",
+                        sk_anddev_d: "Building native mobile applications with intuitive interfaces.",
+                        sk_xam_t: "Xamarin",
+                        sk_xam_d: "Cross-platform mobile development using C# and .NET framework.",
+                        sk_kot_t: "Kotlin",
+                        sk_kot_d: "Modern, concise programming for robust Android applications.",
+                        sk_andstu_t: "Android Studio",
+                        sk_andstu_d: "Profiling, debugging, and building complex mobile projects.",
+                        sk_andtest_t: "Android Testing",
+                        sk_andtest_d: "Ensuring app stability through unit and UI automated tests.",
+                        sk_and_t: "Android",
+                        sk_and_d: "Deep knowledge of the Android ecosystem and lifecycle.",
+                        sk_ai_t: "Artificial Intelligence",
+                        sk_ai_d: "Integration of AI models and tools to automate complex tasks.",
+                        sk_prompt_t: "AI Prompting",
+                        sk_prompt_d: "Crafting precise instructions for LLMs to generate high-quality outputs.",
+                        sk_data_t: "Data Analysis",
+                        sk_data_d: "Extracting insights from datasets to aid in decision-making.",
+                        sk_linux_t: "Linux",
+                        sk_linux_d: "Command-line proficiency and system administration.",
+                        sk_ubuntu_t: "Ubuntu",
+                        sk_ubuntu_d: "Experience managing and configuring Ubuntu-based environments.",
+                        sk_sql_t: "Microsoft SQL Server",
+                        sk_sql_d: "Designing relational databases and optimizing complex queries.",
+                        sk_vs_t: "Visual Studio",
+                        sk_vs_d: "Primary IDE for comprehensive C# and .NET development.",
+                        sk_csharp_t: "Visual C#",
+                        sk_csharp_d: "Object-oriented programming for desktop and backend solutions.",
+                        sk_vb_t: "Visual Basic .NET",
+                        sk_vb_d: "Developing legacy and rapid prototyping enterprise software.",
+                        sk_vscode_t: "Visual Studio Code",
+                        sk_vscode_d: "Lightweight, versatile editor configured for web and scripts.",
+                        sk_ts_t: "Tech Support",
+                        sk_ts_d: "Diagnosing hardware/software issues and providing effective solutions.",
+                        sk_ps_t: "Problem Solving",
+                        sk_ps_d: "Analytical mindset applied to troubleshooting operational challenges.",
+                        sk_trans_t: "EN-ES Translation",
+                        sk_trans_d: "Accurate technical and general translation between English and Spanish.",
+                        sk_eng_t: "Languages (English/Spanish)",
+                        sk_eng_d: "Native Spanish. 95% reading/writing in English, basic conversational English.",
+                        sk_virt_t: "Virtualization",
+                        sk_virt_d: "Creating and managing virtual machines for testing isolated systems.",
+                        sk_office_t: "Microsoft Office",
+                        sk_office_d: "Advanced use of the suite for documentation and data management.",
+                        sk_ppt_t: "Microsoft PowerPoint",
+                        sk_ppt_d: "Designing engaging technical and professional presentations.",
+                        sk_word_t: "Microsoft Word",
+                        sk_word_d: "Crafting structured specs, reports, and system manuals.",
+                        sk_canva_t: "Canva",
+                        sk_canva_d: "Creating appealing visual assets, infographics, and UI mockups.",
                         projects_title: "Featured Cases",
                         case_type_project: "Project",
                         case_type_support: "Tech Support",
@@ -1176,36 +1365,66 @@
                         about_p4: "Impulsado por una curiosidad natural por la tecnología, historia, economía, sistemas operativos y aprendizaje continuo, estoy mejorando activamente mis habilidades de speaking y writing. Asimismo, estoy expandiendo mis conocimientos en desarrollo web moderno, creando aplicaciones web con integración completa.",
                         about_p5: "Busco activamente oportunidades para aplicar mis habilidades, expandir mis conocimientos, crecer profesionalmente y contribuir con valor significativo en proyectos innovadores.",
                         skills_title: "Aptitudes",
-                        skill_se: "Ingeniería en Sistemas",
-                        skill_os: "Sistemas Operativos",
-                        skill_sa: "Administración de Servidores",
-                        skill_arch: "Arquitectura de Software",
-                        skill_design: "Diseño arquitectónico de programas",
-                        skill_xam: "Xamarin",
-                        skill_kot: "Kotlin",
-                        skill_andstu: "Android Studio",
-                        skill_anddev: "Desarrollo de Android",
-                        skill_ai: "Inteligencia Artificial",
-                        skill_prompt: "Prompts de Inteligencia Artificial",
-                        skill_data: "Análisis de Datos",
-                        skill_linux: "Linux",
-                        skill_ubuntu: "Ubuntu",
-                        skill_sql: "Microsoft SQL Server",
-                        skill_vs: "Visual Studio",
-                        skill_csharp: "Visual C#",
-                        skill_vb: "Visual Basic .NET",
-                        skill_vscode: "Visual Studio Code",
-                        skill_ts: "Servicio de Soporte Técnico",
-                        skill_ps: "Resolución de Problemas",
-                        skill_trans: "Traducción de inglés a español",
-                        skill_eng: "Inglés",
-                        skill_virt: "Virtualización",
-                        skill_office: "Microsoft Office",
-                        skill_ppt: "Microsoft PowerPoint",
-                        skill_word: "Microsoft Word",
-                        skill_canva: "Canva",
-                        skill_andtest: "Testing en Android",
-                        skill_and: "Android",
+                        sk_se_t: "Ingeniería en Sistemas",
+                        sk_se_d: "Enfoque en arquitectura de software, algoritmos y análisis de sistemas.",
+                        sk_os_t: "Sistemas Operativos",
+                        sk_os_d: "Comprensión profunda de estructuras de SO, gestión de recursos y sistemas de archivos.",
+                        sk_sa_t: "Administración de Servidores",
+                        sk_sa_d: "Configuración, mantenimiento y seguridad de servidores web locales y remotos.",
+                        sk_arch_t: "Arquitectura de Software",
+                        sk_arch_d: "Diseño de estructuras de aplicaciones escalables, mantenibles y robustas.",
+                        sk_design_t: "Diseño arquitectónico de programas",
+                        sk_design_d: "Creación de diagramas técnicos, flujo UI/UX y planos lógicos.",
+                        sk_anddev_t: "Desarrollo de Android",
+                        sk_anddev_d: "Creación de aplicaciones móviles nativas con interfaces intuitivas.",
+                        sk_xam_t: "Xamarin",
+                        sk_xam_d: "Desarrollo móvil multiplataforma utilizando C# y el framework .NET.",
+                        sk_kot_t: "Kotlin",
+                        sk_kot_d: "Programación moderna y concisa para aplicaciones Android robustas.",
+                        sk_andstu_t: "Android Studio",
+                        sk_andstu_d: "Perfilado, depuración y construcción de proyectos móviles complejos.",
+                        sk_andtest_t: "Testing en Android",
+                        sk_andtest_d: "Asegurando la estabilidad de la app mediante tests automatizados.",
+                        sk_and_t: "Android",
+                        sk_and_d: "Conocimiento profundo del ecosistema y ciclo de vida de Android.",
+                        sk_ai_t: "Inteligencia Artificial",
+                        sk_ai_d: "Integración de modelos y herramientas de IA para automatizar tareas complejas.",
+                        sk_prompt_t: "Prompts de Inteligencia Artificial",
+                        sk_prompt_d: "Creación de instrucciones precisas para que modelos de IA generen resultados de alta calidad.",
+                        sk_data_t: "Análisis de Datos",
+                        sk_data_d: "Extracción de información de conjuntos de datos para la toma de decisiones.",
+                        sk_linux_t: "Linux",
+                        sk_linux_d: "Dominio de la línea de comandos y administración del sistema.",
+                        sk_ubuntu_t: "Ubuntu",
+                        sk_ubuntu_d: "Experiencia administrando y configurando entornos basados en Ubuntu.",
+                        sk_sql_t: "Microsoft SQL Server",
+                        sk_sql_d: "Diseño de bases de datos relacionales y optimización de consultas complejas.",
+                        sk_vs_t: "Visual Studio",
+                        sk_vs_d: "IDE principal para desarrollo integral en C# y .NET.",
+                        sk_csharp_t: "Visual C#",
+                        sk_csharp_d: "Programación orientada a objetos para soluciones de escritorio y backend.",
+                        sk_vb_t: "Visual Basic .NET",
+                        sk_vb_d: "Desarrollo de software empresarial de legado y prototipado rápido.",
+                        sk_vscode_t: "Visual Studio Code",
+                        sk_vscode_d: "Editor versátil y ligero configurado para web y scripts.",
+                        sk_ts_t: "Servicio de Soporte Técnico",
+                        sk_ts_d: "Diagnóstico de problemas de hardware/software y provisión de soluciones efectivas.",
+                        sk_ps_t: "Resolución de Problemas",
+                        sk_ps_d: "Mentalidad analítica aplicada a la resolución de retos operativos.",
+                        sk_trans_t: "Traducción de inglés a español",
+                        sk_trans_d: "Traducción precisa, técnica y general, entre inglés y español.",
+                        sk_eng_t: "Idiomas (Inglés/Español)",
+                        sk_eng_d: "Español nativo. 95% de lectura/escritura en inglés, inglés conversacional básico.",
+                        sk_virt_t: "Virtualización",
+                        sk_virt_d: "Creación y gestión de máquinas virtuales para probar sistemas aislados.",
+                        sk_office_t: "Microsoft Office",
+                        sk_office_d: "Uso avanzado de la suite para documentación y gestión de datos.",
+                        sk_ppt_t: "Microsoft PowerPoint",
+                        sk_ppt_d: "Diseño de presentaciones técnicas y profesionales atractivas.",
+                        sk_word_t: "Microsoft Word",
+                        sk_word_d: "Elaboración de especificaciones estructuradas, reportes y manuales.",
+                        sk_canva_t: "Canva",
+                        sk_canva_d: "Creación de recursos visuales atractivos, infografías y mockups de UI.",
                         projects_title: "Casos Destacados",
                         case_type_project: "Proyecto",
                         case_type_support: "Soporte Técnico",
