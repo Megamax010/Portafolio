@@ -958,6 +958,33 @@
                         project_arch_db: "SQLite database with DBHelper for user management and CRUD operations through UserRepository",
                         project_arch_engine: "CalcEngine.kt for evaluation logic and ScientificFunctions.kt for mathematical operations",
                         project_arch_premium: "PremiumManager.kt handles session management and license key validation",
+                        project_details_btn: "View Project Details",
+                        project_back_btn: "Back to Portfolio",
+                        project_detail_subtitle: "Advanced Scientific Calculator — Full Technical Breakdown",
+                        project_detail_overview_title: "Project Overview",
+                        project_detail_overview_text: "SciCalc Pro is an advanced scientific calculator for Android, developed entirely from scratch in Kotlin. What started as a personal challenge evolved into a robust engineering project with thousands of lines of clean, maintainable code following clean architecture principles. The app features a complete authentication system, a premium licensing model, and a comprehensive set of mathematical functions.",
+                        project_detail_tech_title: "Technology Stack",
+                        project_detail_patterns_title: "Design Patterns & Principles",
+                        project_detail_pattern_clean: "Separation of concerns across UI, business logic, and data layers for maintainability.",
+                        project_detail_pattern_repo: "UserRepository abstracts SQLite operations, providing a clean API for data access.",
+                        project_detail_pattern_srp: "Each module handles one job: CalcEngine evaluates, ScientificFunctions computes, PremiumManager authorizes.",
+                        project_detail_features_title: "Features Breakdown",
+                        project_detail_free_title: "Free Functions",
+                        project_detail_free_1: "Trigonometric: SIN, COS, TAN, ASIN, ACOS, ATAN",
+                        project_detail_free_2: "Logarithmic: LN, LOG\u2081\u2080",
+                        project_detail_free_3: "Powers: x\u00b2, x\u00b3, x\u207f, \u221a, \u00b3\u221a",
+                        project_detail_free_4: "Factorial (n!), Absolute value |x|",
+                        project_detail_free_5: "Constants: \u03c0, e",
+                        project_detail_free_6: "RAD / DEG mode toggle",
+                        project_detail_premium_title: "Premium Functions",
+                        project_detail_premium_1: "Bitwise: AND, OR, XOR, NOT, Shift",
+                        project_detail_premium_2: "Combinatorics: nPr, nCr",
+                        project_detail_premium_3: "Number Theory: GCD, LCM",
+                        project_detail_premium_4: "Memory: MC, MR, M+, M\u2212",
+                        project_detail_premium_5: "Base Conversion: BIN, OCT",
+                        project_detail_premium_6: "Custom root: \u207f\u221ax",
+                        project_detail_gallery_title: "App Screenshots",
+                        project_detail_gallery_hint: "Double-click any image to zoom in",
                         exp_title: "Experience",
                         exp_role1: "Systems Assistant",
                         exp_desc1_1: "Review and optimization of computer equipment",
@@ -1024,6 +1051,33 @@
                         project_arch_db: "Base de datos SQLite con DBHelper para gestión de usuarios y operaciones CRUD a través de UserRepository",
                         project_arch_engine: "CalcEngine.kt para lógica de evaluación y ScientificFunctions.kt para operaciones matemáticas",
                         project_arch_premium: "PremiumManager.kt maneja la gestión de sesiones y validación de claves de licencia",
+                        project_details_btn: "Ver Detalles del Proyecto",
+                        project_back_btn: "Volver al Portafolio",
+                        project_detail_subtitle: "Calculadora Científica Avanzada — Desglose Técnico Completo",
+                        project_detail_overview_title: "Resumen del Proyecto",
+                        project_detail_overview_text: "SciCalc Pro es una calculadora científica avanzada para Android, desarrollada completamente desde cero en Kotlin. Lo que comenzó como un reto personal evolucionó en un proyecto de ingeniería robusto con miles de líneas de código limpio y mantenible siguiendo principios de arquitectura limpia. La app cuenta con un sistema de autenticación completo, un modelo de licenciamiento premium y un conjunto integral de funciones matemáticas.",
+                        project_detail_tech_title: "Stack Tecnológico",
+                        project_detail_patterns_title: "Patrones de Diseño y Principios",
+                        project_detail_pattern_clean: "Separación de responsabilidades entre capas de UI, lógica de negocio y datos para facilitar el mantenimiento.",
+                        project_detail_pattern_repo: "UserRepository abstrae las operaciones SQLite, proporcionando una API limpia para el acceso a datos.",
+                        project_detail_pattern_srp: "Cada módulo maneja una sola tarea: CalcEngine evalúa, ScientificFunctions calcula, PremiumManager autoriza.",
+                        project_detail_features_title: "Desglose de Funciones",
+                        project_detail_free_title: "Funciones Gratuitas",
+                        project_detail_free_1: "Trigonométricas: SIN, COS, TAN, ASIN, ACOS, ATAN",
+                        project_detail_free_2: "Logarítmicas: LN, LOG\u2081\u2080",
+                        project_detail_free_3: "Potencias: x\u00b2, x\u00b3, x\u207f, \u221a, \u00b3\u221a",
+                        project_detail_free_4: "Factorial (n!), Valor absoluto |x|",
+                        project_detail_free_5: "Constantes: \u03c0, e",
+                        project_detail_free_6: "Cambio de modo RAD / DEG",
+                        project_detail_premium_title: "Funciones Premium",
+                        project_detail_premium_1: "Bitwise: AND, OR, XOR, NOT, Shift",
+                        project_detail_premium_2: "Combinatoria: nPr, nCr",
+                        project_detail_premium_3: "Teoría de Números: GCD, LCM",
+                        project_detail_premium_4: "Memoria: MC, MR, M+, M\u2212",
+                        project_detail_premium_5: "Conversión de Base: BIN, OCT",
+                        project_detail_premium_6: "Raíz personalizada: \u207f\u221ax",
+                        project_detail_gallery_title: "Capturas de la App",
+                        project_detail_gallery_hint: "Doble clic en cualquier imagen para hacer zoom",
                         exp_title: "Experiencia",
                         exp_role1: "Asistente de Sistemas",
                         exp_desc1_1: "Revisión y optimización de equipos de cómputo",
@@ -1497,18 +1551,19 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="p-4 bg-dark-800/50 rounded-lg border-l-2 border-brand-500">
                             <h5 class="font-semibold text-white mb-2">Clean Architecture</h5>
-                            <p class="text-sm text-gray-400">Separation of concerns across UI, business logic, and data
-                                layers for maintainability.</p>
+                            <p class="text-sm text-gray-400" data-i18n="project_detail_pattern_clean">Separation of
+                                concerns across UI, business logic, and data layers for maintainability.</p>
                         </div>
                         <div class="p-4 bg-dark-800/50 rounded-lg border-l-2 border-purple-500">
                             <h5 class="font-semibold text-white mb-2">Repository Pattern</h5>
-                            <p class="text-sm text-gray-400">UserRepository abstracts SQLite operations, providing a
-                                clean API for data access.</p>
+                            <p class="text-sm text-gray-400" data-i18n="project_detail_pattern_repo">UserRepository
+                                abstracts SQLite operations, providing a clean API for data access.</p>
                         </div>
                         <div class="p-4 bg-dark-800/50 rounded-lg border-l-2 border-green-500">
                             <h5 class="font-semibold text-white mb-2">Single Responsibility</h5>
-                            <p class="text-sm text-gray-400">Each module handles one job: CalcEngine evaluates,
-                                ScientificFunctions computes, PremiumManager authorizes.</p>
+                            <p class="text-sm text-gray-400" data-i18n="project_detail_pattern_srp">Each module handles
+                                one job: CalcEngine evaluates, ScientificFunctions computes, PremiumManager authorizes.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1520,39 +1575,46 @@
                             data-i18n="project_detail_features_title">Features Breakdown</span></h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <h4 class="text-sm font-mono text-brand-400 mb-3 uppercase tracking-wider">Free Functions
-                            </h4>
+                            <h4 class="text-sm font-mono text-brand-400 mb-3 uppercase tracking-wider"
+                                data-i18n="project_detail_free_title">Free Functions</h4>
                             <ul class="space-y-2 text-gray-300 text-sm">
-                                <li class="flex items-center gap-2"><i class="ri-check-line text-green-400"></i>
-                                    Trigonometric: SIN, COS, TAN, ASIN, ACOS, ATAN</li>
-                                <li class="flex items-center gap-2"><i class="ri-check-line text-green-400"></i>
-                                    Logarithmic: LN, LOG₁₀</li>
-                                <li class="flex items-center gap-2"><i class="ri-check-line text-green-400"></i> Powers:
-                                    x², x³, xⁿ, √, ³√</li>
-                                <li class="flex items-center gap-2"><i class="ri-check-line text-green-400"></i>
-                                    Factorial (n!), Absolute value |x|</li>
-                                <li class="flex items-center gap-2"><i class="ri-check-line text-green-400"></i>
-                                    Constants: π, e</li>
-                                <li class="flex items-center gap-2"><i class="ri-check-line text-green-400"></i> RAD /
-                                    DEG mode toggle</li>
+                                <li class="flex items-center gap-2"><i class="ri-check-line text-green-400"></i> <span
+                                        data-i18n="project_detail_free_1">Trigonometric: SIN, COS, TAN, ASIN, ACOS,
+                                        ATAN</span></li>
+                                <li class="flex items-center gap-2"><i class="ri-check-line text-green-400"></i> <span
+                                        data-i18n="project_detail_free_2">Logarithmic: LN, LOG₁₀</span></li>
+                                <li class="flex items-center gap-2"><i class="ri-check-line text-green-400"></i> <span
+                                        data-i18n="project_detail_free_3">Powers: x², x³, xⁿ, √, ³√</span></li>
+                                <li class="flex items-center gap-2"><i class="ri-check-line text-green-400"></i> <span
+                                        data-i18n="project_detail_free_4">Factorial (n!), Absolute value |x|</span></li>
+                                <li class="flex items-center gap-2"><i class="ri-check-line text-green-400"></i> <span
+                                        data-i18n="project_detail_free_5">Constants: π, e</span></li>
+                                <li class="flex items-center gap-2"><i class="ri-check-line text-green-400"></i> <span
+                                        data-i18n="project_detail_free_6">RAD / DEG mode toggle</span></li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="text-sm font-mono text-yellow-400 mb-3 uppercase tracking-wider">Premium
-                                Functions</h4>
+                            <h4 class="text-sm font-mono text-yellow-400 mb-3 uppercase tracking-wider"
+                                data-i18n="project_detail_premium_title">Premium Functions</h4>
                             <ul class="space-y-2 text-gray-300 text-sm">
                                 <li class="flex items-center gap-2"><i class="ri-vip-crown-line text-yellow-400"></i>
-                                    Bitwise: AND, OR, XOR, NOT, Shift</li>
+                                    <span data-i18n="project_detail_premium_1">Bitwise: AND, OR, XOR, NOT, Shift</span>
+                                </li>
                                 <li class="flex items-center gap-2"><i class="ri-vip-crown-line text-yellow-400"></i>
-                                    Combinatorics: nPr, nCr</li>
+                                    <span data-i18n="project_detail_premium_2">Combinatorics: nPr, nCr</span>
+                                </li>
                                 <li class="flex items-center gap-2"><i class="ri-vip-crown-line text-yellow-400"></i>
-                                    Number Theory: GCD, LCM</li>
+                                    <span data-i18n="project_detail_premium_3">Number Theory: GCD, LCM</span>
+                                </li>
                                 <li class="flex items-center gap-2"><i class="ri-vip-crown-line text-yellow-400"></i>
-                                    Memory: MC, MR, M+, M−</li>
+                                    <span data-i18n="project_detail_premium_4">Memory: MC, MR, M+, M−</span>
+                                </li>
                                 <li class="flex items-center gap-2"><i class="ri-vip-crown-line text-yellow-400"></i>
-                                    Base Conversion: BIN, OCT</li>
+                                    <span data-i18n="project_detail_premium_5">Base Conversion: BIN, OCT</span>
+                                </li>
                                 <li class="flex items-center gap-2"><i class="ri-vip-crown-line text-yellow-400"></i>
-                                    Custom root: ⁿ√x</li>
+                                    <span data-i18n="project_detail_premium_6">Custom root: ⁿ√x</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -1579,7 +1641,8 @@
                         <img src="./assets/images/media__1774911940397.jpg" alt="History"
                             class="rounded-lg gallery-img cursor-pointer w-full object-cover aspect-[9/16] hover:scale-105 transition-transform">
                     </div>
-                    <p class="text-gray-500 text-xs mt-4 text-center">Double-click any image to zoom in</p>
+                    <p class="text-gray-500 text-xs mt-4 text-center" data-i18n="project_detail_gallery_hint">
+                        Double-click any image to zoom in</p>
                 </div>
             </div>
         </div>
