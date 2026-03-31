@@ -125,10 +125,12 @@
             width: 100%;
             inset: 0px;
             border-radius: inherit;
-            background: radial-gradient(600px circle at var(--x-px) var(--y-px),
-                    rgba(59, 130, 246, 0.25),
-                    transparent 40%);
+            background: radial-gradient(350px circle at var(--x-px) var(--y-px),
+                    rgba(59, 130, 246, 0.15),
+                    rgba(59, 130, 246, 0) 40%);
             pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .glass-card::before {
@@ -136,11 +138,10 @@
         }
 
         .glass-card::after {
-            opacity: 0;
             z-index: 0;
-            transition: opacity 0.4s ease;
         }
 
+        .glass-card:hover::before,
         .glass-card:hover::after {
             opacity: 1;
         }
@@ -1855,16 +1856,13 @@
                 });
             }
 
-            // Glow hover effect for cards
-            const grids = document.querySelectorAll('.grid');
-            grids.forEach((grid) => {
-                grid.addEventListener('pointermove', (ev) => {
-                    const cards = grid.querySelectorAll('.glass-card');
-                    cards.forEach((card) => {
-                        const rect = card.getBoundingClientRect();
-                        card.style.setProperty('--x', ev.clientX - rect.left);
-                        card.style.setProperty('--y', ev.clientY - rect.top);
-                    });
+            // Glow hover effect for all cards
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach((card) => {
+                card.addEventListener('pointermove', (ev) => {
+                    const rect = card.getBoundingClientRect();
+                    card.style.setProperty('--x', ev.clientX - rect.left);
+                    card.style.setProperty('--y', ev.clientY - rect.top);
                 });
             });
         })();
