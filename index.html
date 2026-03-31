@@ -640,7 +640,15 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2">
                         <div
                             class="relative h-64 lg:h-auto min-h-[16rem] bg-dark-800 flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+                            <img src="./assets/images/media__1774917221470.jpg" alt="SciCalc Pro Welcome"
+                                class="w-full h-full object-cover shrink-0 snap-center gallery-img cursor-pointer">
+                            <img src="./assets/images/media__1774917259096.jpg" alt="SciCalc Pro Login"
+                                class="w-full h-full object-cover shrink-0 snap-center gallery-img cursor-pointer">
+                            <img src="./assets/images/media__1774917212942.jpg" alt="SciCalc Pro Register"
+                                class="w-full h-full object-cover shrink-0 snap-center gallery-img cursor-pointer">
                             <img src="./assets/images/media__1774911940281.jpg" alt="SciCalc Pro Main UI"
+                                class="w-full h-full object-cover shrink-0 snap-center gallery-img cursor-pointer">
+                            <img src="./assets/images/media__1774917198169.jpg" alt="SciCalc Pro Premium Activation"
                                 class="w-full h-full object-cover shrink-0 snap-center gallery-img cursor-pointer">
                             <img src="./assets/images/media__1774911940383.jpg" alt="SciCalc Pro Function Premium"
                                 class="w-full h-full object-cover shrink-0 snap-center gallery-img cursor-pointer">
@@ -1308,6 +1316,10 @@
             function updateTransform() {
                 if (lightboxImg) {
                     lightboxImg.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + currentZoom + ')';
+                }
+                var btnReset = document.getElementById('lightbox-reset');
+                if (btnReset) {
+                    btnReset.innerHTML = Math.round(currentZoom * 100) + '%';
                 }
             }
             function resetZoom() {
