@@ -641,11 +641,11 @@
                         <div
                             class="relative h-64 lg:h-auto min-h-[16rem] bg-dark-800 flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
                             <img src="./assets/images/media__1774911940281.jpg" alt="SciCalc Pro Main UI"
-                                class="w-full h-full object-cover shrink-0 snap-center">
+                                class="w-full h-full object-cover shrink-0 snap-center gallery-img cursor-pointer">
                             <img src="./assets/images/media__1774911940383.jpg" alt="SciCalc Pro Function Premium"
-                                class="w-full h-full object-cover shrink-0 snap-center">
+                                class="w-full h-full object-cover shrink-0 snap-center gallery-img cursor-pointer">
                             <img src="./assets/images/media__1774911940397.jpg" alt="SciCalc Pro History"
-                                class="w-full h-full object-cover shrink-0 snap-center">
+                                class="w-full h-full object-cover shrink-0 snap-center gallery-img cursor-pointer">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent lg:hidden pointer-events-none"
                                 aria-hidden="true"></div>
                         </div>
@@ -1264,6 +1264,156 @@
                 window.setLanguage = setLanguage;
                 window.toggleMenu = toggleMenu;
             })();
+    </script>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox"
+        class="fixed inset-0 z-[100] bg-dark-900/95 backdrop-blur-sm hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300">
+        <button id="lightbox-close"
+            class="absolute top-6 right-6 text-white text-3xl hover:text-brand-400 transition-colors z-10 p-2"><i
+                class="ri-close-line"></i></button>
+        <button id="lightbox-prev"
+            class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-brand-400 transition-colors z-10 p-2"><i
+                class="ri-arrow-left-s-line"></i></button>
+        <button id="lightbox-next"
+            class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-brand-400 transition-colors z-10 p-2"><i
+                class="ri-arrow-right-s-line"></i></button>
+
+        <div class="relative w-full h-full flex items-center justify-center overflow-hidden" id="lightbox-container">
+            <img id="lightbox-img" src=""
+                class="max-w-full max-h-full object-contain transition-transform duration-200 cursor-grab"
+                draggable="false">
+        </div>
+
+        <div class="absolute bottom-6 flex gap-4 z-10 glass px-4 py-2 rounded-full">
+            <button id="lightbox-zoom-out" class="text-white hover:text-brand-400 p-2"><i
+                    class="ri-zoom-out-line text-xl"></i></button>
+            <button id="lightbox-reset"
+                class="text-white hover:text-brand-400 text-sm font-mono mt-1 px-2">100%</button>
+            <button id="lightbox-zoom-in" class="text-white hover:text-brand-400 p-2"><i
+                    class="ri-zoom-in-line text-xl"></i></button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImg = document.getElementById('lightbox-img');
+            var images = Array.from(document.querySelectorAll('.gallery-img'));
+            var currentIndex = 0;
+            var currentZoom = 1;
+            var isDragging = false;
+            var startX = 0, startY = 0, translateX = 0, translateY = 0;
+
+            function updateTransform() {
+                if (lightboxImg) {
+                    lightboxImg.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + currentZoom + ')';
+                }
+            }
+            function resetZoom() {
+                currentZoom = 1; translateX = 0; translateY = 0; updateTransform();
+            }
+            function showImage(index) {
+                if (index < 0) index = images.length - 1;
+                if (index >= images.length) index = 0;
+                currentIndex = index;
+                if (lightboxImg && images[currentIndex]) lightboxImg.src = images[currentIndex].src;
+                resetZoom();
+            }
+            function openLightbox(index) {
+                showImage(index);
+                if (lightbox) {
+                    lightbox.classList.remove('hidden');
+                    setTimeout(function () { lightbox.classList.remove('opacity-0'); }, 10);
+                }
+            }
+            function closeLightbox() {
+                if (lightbox) {
+                    lightbox.classList.add('opacity-0');
+                    setTimeout(function () { lightbox.classList.add('hidden'); }, 300);
+                }
+            }
+
+            images.forEach(function (img, index) {
+                img.addEventListener('dblclick', function () { openLightbox(index); });
+            });
+
+            var btnClose = document.getElementById('lightbox-close');
+            if (btnClose) btnClose.addEventListener('click', closeLightbox);
+
+            var btnPrev = document.getElementById('lightbox-prev');
+            if (btnPrev) btnPrev.addEventListener('click', function () { showImage(currentIndex - 1); });
+
+            var btnNext = document.getElementById('lightbox-next');
+            if (btnNext) btnNext.addEventListener('click', function () { showImage(currentIndex + 1); });
+
+            var btnZoomIn = document.getElementById('lightbox-zoom-in');
+            if (btnZoomIn) btnZoomIn.addEventListener('click', function () {
+                currentZoom = Math.min(currentZoom + 0.5, 4); updateTransform();
+            });
+
+            var btnZoomOut = document.getElementById('lightbox-zoom-out');
+            if (btnZoomOut) btnZoomOut.addEventListener('click', function () {
+                currentZoom = Math.max(currentZoom - 0.5, 1);
+                if (currentZoom === 1) { translateX = 0; translateY = 0; }
+                updateTransform();
+            });
+
+            var btnReset = document.getElementById('lightbox-reset');
+            if (btnReset) btnReset.addEventListener('click', resetZoom);
+
+            var container = document.getElementById('lightbox-container');
+            if (container) {
+                container.addEventListener('mousedown', function (e) {
+                    if (currentZoom > 1) {
+                        isDragging = true;
+                        startX = e.clientX - translateX;
+                        startY = e.clientY - translateY;
+                        lightboxImg.classList.remove('transition-transform');
+                    }
+                });
+                window.addEventListener('mousemove', function (e) {
+                    if (!isDragging) return;
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    updateTransform();
+                });
+                window.addEventListener('mouseup', function () {
+                    isDragging = false;
+                    if (lightboxImg) lightboxImg.classList.add('transition-transform');
+                });
+
+                var touchStartX = 0;
+                container.addEventListener('touchstart', function (e) {
+                    if (currentZoom === 1) {
+                        touchStartX = e.changedTouches[0].screenX;
+                    } else {
+                        isDragging = true;
+                        startX = e.touches[0].clientX - translateX;
+                        startY = e.touches[0].clientY - translateY;
+                        lightboxImg.classList.remove('transition-transform');
+                    }
+                });
+                container.addEventListener('touchmove', function (e) {
+                    if (isDragging && currentZoom > 1) {
+                        translateX = e.touches[0].clientX - startX;
+                        translateY = e.touches[0].clientY - startY;
+                        updateTransform();
+                        e.preventDefault(); // prevent scrolling while panning
+                    }
+                }, { passive: false });
+                container.addEventListener('touchend', function (e) {
+                    if (currentZoom === 1) {
+                        var touchEndX = e.changedTouches[0].screenX;
+                        if (touchEndX < touchStartX - 50) showImage(currentIndex + 1);
+                        if (touchEndX > touchStartX + 50) showImage(currentIndex - 1);
+                    } else {
+                        isDragging = false;
+                        if (lightboxImg) lightboxImg.classList.add('transition-transform');
+                    }
+                });
+            }
+        });
     </script>
 </body>
 
