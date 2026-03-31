@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Bruno López — estudiante de Ingeniería en Sistemas, desarrollo de software y arquitectura limpia. Portfolio y proyectos como SciCalc Pro.">
-    <meta name="theme-color" content="#0f172a">
+        content="Bruno López — estudiante de Ingeniería en Sistemas, desarrollo de software y su arquitectura. Portfolio y casos destacados como SciCalc Pro.">
+    <meta name="theme-color" content="#050505">
     <meta property="og:title" content="Bruno López | Digital Portfolio">
     <meta property="og:description"
-        content="Systems Engineering student focused on software development and clean architecture.">
+        content="Systems Engineering student focused on software development and its architecture.">
     <meta property="og:type" content="website">
     <title>Bruno López | Digital Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,35 +23,29 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        sans: ['JetBrains Mono', 'ui-monospace', 'monospace'],
                         mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
                     },
                     colors: {
                         brand: {
                             50: '#f0f9ff',
                             100: '#e0f2fe',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
+                            400: '#3b82f6',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
                             900: '#0c4a6e',
                             950: '#082f49',
                         },
                         dark: {
-                            900: '#0f172a',
-                            800: '#1e293b',
-                            700: '#334155',
+                            950: '#050505',
+                            900: '#0a0a0a',
+                            800: '#141414',
+                            700: '#1a1a1a',
+                            600: '#2a2a2a',
                         }
                     },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
+                    animation: {},
+                    keyframes: {}
                 }
             }
         }
@@ -63,8 +56,8 @@
         }
 
         body {
-            background-color: #0f172a;
-            color: #f8fafc;
+            background-color: #050505;
+            color: #e4e4e4;
             overflow-x: hidden;
         }
 
