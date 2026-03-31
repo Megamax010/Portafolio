@@ -125,15 +125,10 @@
             width: 100%;
             inset: 0px;
             border-radius: inherit;
-            background: radial-gradient(350px circle at var(--x-px) var(--y-px),
-                    rgba(59, 130, 246, 0.15),
+            background: radial-gradient(350px circle at var(--x-px, -1000px) var(--y-px, -1000px),
+                    rgba(59, 130, 246, 0.12),
                     rgba(59, 130, 246, 0) 40%);
             pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .glass-card::before {
             z-index: 0;
         }
 
@@ -2075,22 +2070,24 @@
                 });
             }
 
-            // Glow hover effect for all cards
-            const cards = document.querySelectorAll('.glass-card');
-            cards.forEach((card) => {
-                card.addEventListener('pointermove', (ev) => {
-                    const rect = card.getBoundingClientRect();
-                    card.style.setProperty('--x', ev.clientX - rect.left);
-                    card.style.setProperty('--y', ev.clientY - rect.top);
+            // Glow hover effect for all cards globally
+            const cards = Array.from(document.querySelectorAll('.glass-card'));
+            document.addEventListener('pointermove', (ev) => {
+                requestAnimationFrame(() => {
+                    const rects = cards.map(c => c.getBoundingClientRect());
+                    cards.forEach((card, i) => {
+                        card.style.setProperty('--x', ev.clientX - rects[i].left);
+                        card.style.setProperty('--y', ev.clientY - rects[i].top);
+                    });
                 });
             });
 
             // Typewriter effect for description
             setTimeout(() => {
+                const hiddenDesc = document.querySelector('p[data-i18n="hero_desc"]');
                 const descEl = document.querySelector('.typewriter-desc');
-                if (!descEl) return;
-                const originalHTML = descEl.innerHTML.trim();
-                descEl.innerHTML = '';
+                if (!hiddenDesc || !descEl) return;
+                const originalHTML = hiddenDesc.innerHTML.trim();
 
                 const speed = 3500 / originalHTML.length;
                 let i = 0;
