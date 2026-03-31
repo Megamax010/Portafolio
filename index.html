@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bruno López — estudiante de Ingeniería en Sistemas, desarrollo de software y arquitectura limpia. Portfolio y proyectos como SciCalc Pro.">
+    <meta name="description"
+        content="Bruno López — estudiante de Ingeniería en Sistemas, desarrollo de software y arquitectura limpia. Portfolio y proyectos como SciCalc Pro.">
     <meta name="theme-color" content="#0f172a">
     <meta property="og:title" content="Bruno López | Digital Portfolio">
-    <meta property="og:description" content="Systems Engineering student focused on software development and clean architecture.">
+    <meta property="og:description"
+        content="Systems Engineering student focused on software development and clean architecture.">
     <meta property="og:type" content="website">
     <title>Bruno López | Digital Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -67,11 +72,13 @@
             html {
                 scroll-behavior: auto;
             }
+
             .animate-float,
             .animate-pulse-slow,
             .animate-pulse {
                 animation: none !important;
             }
+
             .reveal {
                 opacity: 1 !important;
                 transform: none !important;
@@ -82,13 +89,16 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #0f172a;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #334155;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #0ea5e9;
         }
@@ -126,6 +136,7 @@
             transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
@@ -138,6 +149,7 @@
             transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
             pointer-events: none;
         }
+
         .lang-dropdown.active {
             opacity: 1;
             visibility: visible;
@@ -148,9 +160,11 @@
         .lang-btn {
             transition: background-color 0.2s ease, border-color 0.2s ease;
         }
+
         .lang-btn:hover {
             background: rgba(56, 189, 248, 0.2);
         }
+
         .lang-btn.active {
             background: rgba(56, 189, 248, 0.3);
             border-color: #38bdf8;
@@ -164,28 +178,47 @@
             font-size: 0.85rem;
             overflow-x: auto;
         }
+
         .code-line {
             display: flex;
             line-height: 1.6;
         }
+
         .code-number {
             color: #666;
             min-width: 2rem;
             user-select: none;
         }
-        .code-keyword { color: #569cd6; }
-        .code-string { color: #ce9178; }
-        .code-comment { color: #6a9955; }
-        .code-class { color: #4ec9b0; }
-        .code-method { color: #dcdcaa; }
+
+        .code-keyword {
+            color: #569cd6;
+        }
+
+        .code-string {
+            color: #ce9178;
+        }
+
+        .code-comment {
+            color: #6a9955;
+        }
+
+        .code-class {
+            color: #4ec9b0;
+        }
+
+        .code-method {
+            color: #dcdcaa;
+        }
 
         .contact-btn {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .contact-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.3);
         }
+
         .contact-btn:active {
             transform: translateY(-1px);
         }
@@ -203,6 +236,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .project-card::before {
             content: '';
             position: absolute;
@@ -213,6 +247,7 @@
             background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.1), transparent);
             transition: left 0.5s ease;
         }
+
         .project-card:hover::before {
             left: 100%;
         }
@@ -228,6 +263,7 @@
             margin: 4px;
             transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
         }
+
         .skill-tag:hover {
             background: rgba(56, 189, 248, 0.2);
             border-color: rgba(56, 189, 248, 0.4);
@@ -238,6 +274,7 @@
             position: relative;
             overflow: visible;
         }
+
         .lang-selector-btn::after {
             content: 'Language';
             position: absolute;
@@ -250,6 +287,7 @@
             opacity: 0;
             transition: opacity 0.3s ease, bottom 0.3s ease;
         }
+
         .lang-selector-btn:hover::after {
             opacity: 1;
             bottom: -25px;
@@ -266,6 +304,7 @@
             white-space: nowrap;
             border: 0;
         }
+
         .skip-link:focus {
             position: fixed;
             width: auto;
@@ -284,29 +323,39 @@
         }
     </style>
 </head>
+
 <body class="antialiased selection:bg-brand-500 selection:text-white">
 
-    <a id="skip-link" href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-3 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-white">Skip to content</a>
+    <a id="skip-link" href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-3 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-white">Skip
+        to content</a>
 
     <!-- Language Switcher -->
     <div class="fixed top-24 right-4 z-50">
-        <button type="button" onclick="toggleLangDropdown()" class="glass p-3 rounded-xl hover:bg-white/10 transition-all lang-btn lang-selector-btn" id="langToggle" aria-label="Change language" aria-expanded="false" aria-haspopup="true" aria-controls="langDropdown">
+        <button type="button" onclick="toggleLangDropdown()"
+            class="glass p-3 rounded-xl hover:bg-white/10 transition-all lang-btn lang-selector-btn" id="langToggle"
+            aria-label="Change language" aria-expanded="false" aria-haspopup="true" aria-controls="langDropdown">
             <div class="flex items-center gap-2">
                 <i class="ri-translate text-xl text-brand-400" aria-hidden="true"></i>
                 <span class="text-sm font-mono text-brand-400 hidden sm:inline" id="langLabel">EN</span>
                 <i class="ri-arrow-down-s-line text-brand-400" aria-hidden="true"></i>
             </div>
         </button>
-        <div class="lang-dropdown absolute right-0 mt-2 w-48 glass rounded-xl overflow-hidden shadow-2xl" id="langDropdown" role="menu" aria-labelledby="langToggle">
+        <div class="lang-dropdown absolute right-0 mt-2 w-48 glass rounded-xl overflow-hidden shadow-2xl"
+            id="langDropdown" role="menu" aria-labelledby="langToggle">
             <div class="px-4 py-2 border-b border-white/5">
                 <p class="text-xs text-gray-400 font-mono">SELECT LANGUAGE</p>
             </div>
-            <button type="button" onclick="setLanguage('en')" class="w-full px-4 py-3 text-left hover:bg-white/5 flex items-center gap-3 lang-btn active" data-lang="en" role="menuitemradio" aria-checked="true">
+            <button type="button" onclick="setLanguage('en')"
+                class="w-full px-4 py-3 text-left hover:bg-white/5 flex items-center gap-3 lang-btn active"
+                data-lang="en" role="menuitemradio" aria-checked="true">
                 <i class="ri-translate text-brand-400" aria-hidden="true"></i>
                 <span class="flex-1">English</span>
                 <i class="ri-check-line text-brand-400" id="check-en" aria-hidden="true"></i>
             </button>
-            <button type="button" onclick="setLanguage('es')" class="w-full px-4 py-3 text-left hover:bg-white/5 flex items-center gap-3 lang-btn" data-lang="es" role="menuitemradio" aria-checked="false">
+            <button type="button" onclick="setLanguage('es')"
+                class="w-full px-4 py-3 text-left hover:bg-white/5 flex items-center gap-3 lang-btn" data-lang="es"
+                role="menuitemradio" aria-checked="false">
                 <i class="ri-translate text-brand-400" aria-hidden="true"></i>
                 <span class="flex-1">Español</span>
                 <i class="ri-check-line text-brand-400 hidden" id="check-es" aria-hidden="true"></i>
@@ -325,15 +374,27 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#about" class="hover:text-brand-400 transition-colors px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav_about">About</a>
-                        <a href="#skills" class="hover:text-brand-400 transition-colors px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav_skills">Skills</a>
-                        <a href="#projects" class="hover:text-brand-400 transition-colors px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav_projects">Projects</a>
-                        <a href="#experience" class="hover:text-brand-400 transition-colors px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav_experience">Experience</a>
-                        <a href="#contact" class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-brand-500/20" data-i18n="nav_contact">Contact</a>
+                        <a href="#about"
+                            class="hover:text-brand-400 transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                            data-i18n="nav_about">About</a>
+                        <a href="#skills"
+                            class="hover:text-brand-400 transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                            data-i18n="nav_skills">Skills</a>
+                        <a href="#projects"
+                            class="hover:text-brand-400 transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                            data-i18n="nav_projects">Projects</a>
+                        <a href="#experience"
+                            class="hover:text-brand-400 transition-colors px-3 py-2 rounded-md text-sm font-medium"
+                            data-i18n="nav_experience">Experience</a>
+                        <a href="#contact"
+                            class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-brand-500/20"
+                            data-i18n="nav_contact">Contact</a>
                     </div>
                 </div>
                 <div class="-mr-2 flex md:hidden">
-                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-400" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <button type="button" onclick="toggleMenu()"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-400"
+                        id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
                         <i class="ri-menu-line text-2xl" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -341,439 +402,543 @@
         </div>
         <div class="md:hidden hidden bg-dark-800 border-b border-white/5" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" onclick="toggleMenu()" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" data-i18n="nav_about">About</a>
-                <a href="#skills" onclick="toggleMenu()" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" data-i18n="nav_skills">Skills</a>
-                <a href="#projects" onclick="toggleMenu()" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" data-i18n="nav_projects">Projects</a>
-                <a href="#experience" onclick="toggleMenu()" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" data-i18n="nav_experience">Experience</a>
-                <a href="#contact" onclick="toggleMenu()" class="text-brand-400 block px-3 py-2 rounded-md text-base font-medium" data-i18n="nav_contact">Contact</a>
+                <a href="#about" onclick="toggleMenu()"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    data-i18n="nav_about">About</a>
+                <a href="#skills" onclick="toggleMenu()"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    data-i18n="nav_skills">Skills</a>
+                <a href="#projects" onclick="toggleMenu()"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    data-i18n="nav_projects">Projects</a>
+                <a href="#experience" onclick="toggleMenu()"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    data-i18n="nav_experience">Experience</a>
+                <a href="#contact" onclick="toggleMenu()"
+                    class="text-brand-400 block px-3 py-2 rounded-md text-base font-medium"
+                    data-i18n="nav_contact">Contact</a>
             </div>
         </div>
     </nav>
 
     <main id="main-content">
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" aria-labelledby="hero-heading">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl animate-pulse-slow pointer-events-none" aria-hidden="true"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow pointer-events-none" style="animation-delay: 2s;" aria-hidden="true"></div>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+            aria-labelledby="hero-heading">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl animate-pulse-slow pointer-events-none"
+                aria-hidden="true"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow pointer-events-none"
+                style="animation-delay: 2s;" aria-hidden="true"></div>
 
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
-            <div class="lg:w-1/2 text-center lg:text-left z-10 reveal active">
-                <div class="inline-flex items-center px-3 py-1 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-xs font-mono mb-6">
-                    <span class="w-2 h-2 rounded-full bg-brand-400 mr-2 animate-pulse" aria-hidden="true"></span>
-                    <span data-i18n="hero_available">Systems Engineering Student</span>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 text-center lg:text-left z-10 reveal active">
+                    <div
+                        class="inline-flex items-center px-3 py-1 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-xs font-mono mb-6">
+                        <span class="w-2 h-2 rounded-full bg-brand-400 mr-2 animate-pulse" aria-hidden="true"></span>
+                        <span data-i18n="hero_available">Systems Engineering Student</span>
+                    </div>
+                    <h1 id="hero-heading" class="text-5xl lg:text-7xl font-bold tracking-tight mb-6">
+                        <span data-i18n="hero_hi">Hi, I'm</span><br>
+                        <span class="text-gradient">Bruno López</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+                        data-i18n="hero_desc">
+                        Systems Engineering student focused on <span class="text-white font-semibold">software
+                            development</span> and clean architecture. I build robust applications and turn ideas into
+                        functional solutions.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#projects"
+                            class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-lg font-semibold transition-all shadow-lg shadow-brand-500/25 flex items-center justify-center gap-2 contact-btn">
+                            <span data-i18n="hero_projects">View Projects</span> <i class="ri-arrow-right-line"
+                                aria-hidden="true"></i>
+                        </a>
+                        <a href="#contact"
+                            class="px-8 py-4 glass hover:bg-white/5 text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 contact-btn">
+                            <i class="ri-mail-send-line" aria-hidden="true"></i> <span
+                                data-i18n="hero_contact">Contact</span>
+                        </a>
+                    </div>
                 </div>
-                <h1 id="hero-heading" class="text-5xl lg:text-7xl font-bold tracking-tight mb-6">
-                    <span data-i18n="hero_hi">Hi, I'm</span><br>
-                    <span class="text-gradient">Bruno López</span>
-                </h1>
-                <p class="text-xl text-gray-400 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_desc">
-                    Systems Engineering student focused on <span class="text-white font-semibold">software development</span> and clean architecture. I build robust applications and turn ideas into functional solutions.
-                </p>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#projects" class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-lg font-semibold transition-all shadow-lg shadow-brand-500/25 flex items-center justify-center gap-2 contact-btn">
-                        <span data-i18n="hero_projects">View Projects</span> <i class="ri-arrow-right-line" aria-hidden="true"></i>
-                    </a>
-                    <a href="#contact" class="px-8 py-4 glass hover:bg-white/5 text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 contact-btn">
-                        <i class="ri-mail-send-line" aria-hidden="true"></i> <span data-i18n="hero_contact">Contact</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="lg:w-1/2 mt-8 lg:mt-0 relative z-10 reveal active" style="transition-delay: 200ms;">
-                <div class="hero-visual">
-                    <div class="relative w-full max-w-md aspect-square">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-purple-500/20 rounded-full blur-2xl animate-float" aria-hidden="true"></div>
-                        <div class="relative w-full h-full glass-card rounded-2xl p-6 flex items-center justify-center border border-white/10 overflow-hidden group">
-                            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20 group-hover:scale-110 transition-transform duration-700" role="img" aria-label="Abstract tech background"></div>
-                            <div class="text-center relative z-10">
-                                <i class="ri-code-s-slash-line text-6xl text-brand-400 mb-4 block" aria-hidden="true"></i>
-                                <h2 class="text-2xl font-bold font-mono text-white">Software Developer</h2>
-                                <p class="text-gray-400 text-sm mt-2" data-i18n="hero_tag">Building Solutions That Work</p>
+                <div class="lg:w-1/2 mt-8 lg:mt-0 relative z-10 reveal active" style="transition-delay: 200ms;">
+                    <div class="hero-visual">
+                        <div class="relative w-full max-w-md aspect-square">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-purple-500/20 rounded-full blur-2xl animate-float"
+                                aria-hidden="true"></div>
+                            <div
+                                class="relative w-full h-full glass-card rounded-2xl p-6 flex items-center justify-center border border-white/10 overflow-hidden group">
+                                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20 group-hover:scale-110 transition-transform duration-700"
+                                    role="img" aria-label="Abstract tech background"></div>
+                                <div class="text-center relative z-10">
+                                    <i class="ri-code-s-slash-line text-6xl text-brand-400 mb-4 block"
+                                        aria-hidden="true"></i>
+                                    <h2 class="text-2xl font-bold font-mono text-white">Software Developer</h2>
+                                    <p class="text-gray-400 text-sm mt-2" data-i18n="hero_tag">Building Solutions That
+                                        Work</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-dark-900 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="about_title">About Me</h2>
-                <div class="w-20 h-1 bg-brand-500 mx-auto rounded-full" aria-hidden="true"></div>
-            </div>
-
-            <div class="glass-card rounded-2xl p-8 md:p-12 reveal">
-                <p class="text-lg text-gray-300 leading-relaxed mb-6" data-i18n="about_p1">
-                    I am Bruno, a 19-year-old third-year Systems Engineering student specializing in software development and clean architecture. I am focused on rapid learning and passionate about building robust applications.
-                </p>
-                <p class="text-lg text-gray-300 leading-relaxed mb-6" data-i18n="about_p2">
-                    In development, I build applications in C# using Visual Studio (Windows Forms and Xamarin). A notable example is SciCalc Pro, a scientific calculator that evolved into a robust engineering project with thousands of lines of clean, maintainable code following clean architecture principles.
-                </p>
-                <p class="text-lg text-gray-300 leading-relaxed mb-6" data-i18n="about_p3">
-                    I am also expanding my skills in modern web development, creating responsive web applications with complete front-end and back-end integration.
-                </p>
-                <p class="text-lg text-gray-300 leading-relaxed mb-6" data-i18n="about_p4">
-                    My practical experience at VM Group provided direct exposure to technical problem-solving, IT support, equipment optimization, and basic server management including LAMP stack deployment on LAN environments.
-                </p>
-                <p class="text-lg text-gray-300 leading-relaxed mb-6" data-i18n="about_p5">
-                    Driven by a natural curiosity for technology, history, economics, operating systems, and continuous learning, I maintain solid B2-C1 English reading comprehension while actively improving my speaking and writing skills.
-                </p>
-                <p class="text-lg text-gray-300 leading-relaxed" data-i18n="about_p6">
-                    I am committed to continuous learning and actively seeking opportunities to apply my skills, grow professionally, and contribute meaningful value to innovative projects.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-24 bg-dark-800/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="skills_title">Technical Skills</h2>
-                <p class="text-gray-400" data-i18n="skills_subtitle">My tech stack and main tools</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="glass-card p-6 rounded-xl reveal">
-                    <div class="w-12 h-12 bg-brand-500/20 rounded-lg flex items-center justify-center mb-4 text-brand-400">
-                        <i class="ri-code-box-line text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-4" data-i18n="skill_dev_title">Development</h3>
-                    <div class="flex flex-wrap">
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">Visual Basic .NET</span>
-                        <span class="skill-tag">Visual Studio</span>
-                        <span class="skill-tag">Windows Forms</span>
-                        <span class="skill-tag">Xamarin</span>
-                        <span class="skill-tag">Kotlin</span>
-                        <span class="skill-tag">Android Studio</span>
-                    </div>
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-dark-900 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="about_title">About Me</h2>
+                    <div class="w-20 h-1 bg-brand-500 mx-auto rounded-full" aria-hidden="true"></div>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl reveal" style="transition-delay: 100ms;">
-                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 text-purple-400">
-                        <i class="ri-database-2-line text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-4" data-i18n="skill_data_title">Data & Database</h3>
-                    <div class="flex flex-wrap">
-                        <span class="skill-tag">Microsoft SQL Server</span>
-                        <span class="skill-tag">SQLite</span>
-                        <span class="skill-tag">Data Analysis</span>
-                        <span class="skill-tag">Database Design</span>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 rounded-xl reveal" style="transition-delay: 200ms;">
-                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 text-green-400">
-                        <i class="ri-server-line text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-4" data-i18n="skill_sys_title">Systems & Networks</h3>
-                    <div class="flex flex-wrap">
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">LAMP Stack</span>
-                        <span class="skill-tag">Apache</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">LAN Services</span>
-                        <span class="skill-tag">PuTTY</span>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 rounded-xl reveal" style="transition-delay: 300ms;">
-                    <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-4 text-orange-400">
-                        <i class="ri-shield-keyhole-line text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-4" data-i18n="skill_security_title">Cybersecurity</h3>
-                    <div class="flex flex-wrap">
-                        <span class="skill-tag">Operating Systems</span>
-                        <span class="skill-tag">System Security</span>
-                        <span class="skill-tag">Technical Support</span>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 rounded-xl reveal" style="transition-delay: 400ms;">
-                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-400">
-                        <i class="ri-brain-line text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-4" data-i18n="skill_ai_title">AI & Automation</h3>
-                    <div class="flex flex-wrap">
-                        <span class="skill-tag">AI Tools</span>
-                        <span class="skill-tag">Prompt Engineering</span>
-                        <span class="skill-tag">AI Agents</span>
-                        <span class="skill-tag">Workflow Automation</span>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 rounded-xl reveal" style="transition-delay: 500ms;">
-                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4 text-pink-400">
-                        <i class="ri-tools-line text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-4" data-i18n="skill_tools_title">Tools</h3>
-                    <div class="flex flex-wrap">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Microsoft Office</span>
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">English B2-C1</span>
-                    </div>
+                <div class="glass-card rounded-2xl p-8 md:p-12 reveal">
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6" data-i18n="about_p1">
+                        I am Bruno, a 19-year-old third-year Systems Engineering student specializing in software
+                        development and clean architecture. I am focused on rapid learning and passionate about building
+                        robust applications.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6" data-i18n="about_p2">
+                        In development, I build applications in C# using Visual Studio (Windows Forms and Xamarin). A
+                        notable example is SciCalc Pro, a scientific calculator that evolved into a robust engineering
+                        project with thousands of lines of clean, maintainable code following clean architecture
+                        principles.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6" data-i18n="about_p3">
+                        I am also expanding my skills in modern web development, creating responsive web applications
+                        with complete front-end and back-end integration.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6" data-i18n="about_p4">
+                        My practical experience at VM Group provided direct exposure to technical problem-solving, IT
+                        support, equipment optimization, and basic server management including LAMP stack deployment on
+                        LAN environments.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6" data-i18n="about_p5">
+                        Driven by a natural curiosity for technology, history, economics, operating systems, and
+                        continuous learning, I maintain solid B2-C1 English reading comprehension while actively
+                        improving my speaking and writing skills.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed" data-i18n="about_p6">
+                        I am committed to continuous learning and actively seeking opportunities to apply my skills,
+                        grow professionally, and contribute meaningful value to innovative projects.
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 bg-dark-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="projects_title">Featured Projects</h2>
-                <div class="w-20 h-1 bg-brand-500 mx-auto rounded-full" aria-hidden="true"></div>
-            </div>
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 bg-dark-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="skills_title">Technical Skills</h2>
+                    <p class="text-gray-400" data-i18n="skills_subtitle">My tech stack and main tools</p>
+                </div>
 
-            <div class="glass-card rounded-2xl overflow-hidden reveal group mb-8 project-card">
-                <div class="grid grid-cols-1 lg:grid-cols-2">
-                    <div class="relative h-64 lg:h-auto min-h-[16rem] overflow-hidden bg-dark-800">
-                        <img src="https://image.pollinations.ai/prompt/modern%20mobile%20app%20interface%20dark%20mode%20scientific%20calculator%20SciCalc%20Pro%20blue%20neon%20buttons%20futuristic%20UI%20high%20quality%203d%20render?width=800&height=600&nologo=true" alt="SciCalc Pro — project preview" width="800" height="600" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent lg:hidden pointer-events-none" aria-hidden="true"></div>
-                    </div>
-                    <div class="p-8 lg:p-12 flex flex-col justify-center">
-                        <div class="flex items-center gap-3 mb-4 flex-wrap">
-                            <span class="px-3 py-1 bg-brand-500/10 text-brand-400 text-xs font-mono rounded border border-brand-500/20">Kotlin / Android</span>
-                            <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs font-mono rounded border border-purple-500/20">SQLite</span>
-                            <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-mono rounded border border-green-500/20">Clean Architecture</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 rounded-xl reveal">
+                        <div
+                            class="w-12 h-12 bg-brand-500/20 rounded-lg flex items-center justify-center mb-4 text-brand-400">
+                            <i class="ri-code-box-line text-2xl" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-3xl font-bold mb-4 text-white">SciCalc Pro</h3>
-                        <p class="text-gray-400 mb-6 leading-relaxed" data-i18n="project_desc">
-                            An advanced scientific calculator developed from scratch. What started as a personal challenge evolved into a robust engineering project with thousands of lines of clean, maintainable code following clean architecture principles.
-                        </p>
-                        <ul class="space-y-3 mb-8 text-gray-300">
-                            <li class="flex items-center gap-3">
-                                <i class="ri-check-line text-brand-400 shrink-0" aria-hidden="true"></i>
-                                <span data-i18n="project_feat1">Modern "Dark Mode" interface with smooth animations</span>
+                        <h3 class="text-lg font-bold mb-4" data-i18n="skill_dev_title">Development</h3>
+                        <div class="flex flex-wrap">
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">Visual Basic .NET</span>
+                            <span class="skill-tag">Visual Studio</span>
+                            <span class="skill-tag">Windows Forms</span>
+                            <span class="skill-tag">Xamarin</span>
+                            <span class="skill-tag">Kotlin</span>
+                            <span class="skill-tag">Android Studio</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl reveal" style="transition-delay: 100ms;">
+                        <div
+                            class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 text-purple-400">
+                            <i class="ri-database-2-line text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-4" data-i18n="skill_data_title">Data & Database</h3>
+                        <div class="flex flex-wrap">
+                            <span class="skill-tag">Microsoft SQL Server</span>
+                            <span class="skill-tag">SQLite</span>
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">Database Design</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl reveal" style="transition-delay: 200ms;">
+                        <div
+                            class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 text-green-400">
+                            <i class="ri-server-line text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-4" data-i18n="skill_sys_title">Systems & Networks</h3>
+                        <div class="flex flex-wrap">
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">LAMP Stack</span>
+                            <span class="skill-tag">Apache</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">LAN Services</span>
+                            <span class="skill-tag">PuTTY</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl reveal" style="transition-delay: 300ms;">
+                        <div
+                            class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-4 text-orange-400">
+                            <i class="ri-shield-keyhole-line text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-4" data-i18n="skill_security_title">Cybersecurity</h3>
+                        <div class="flex flex-wrap">
+                            <span class="skill-tag">Operating Systems</span>
+                            <span class="skill-tag">System Security</span>
+                            <span class="skill-tag">Technical Support</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl reveal" style="transition-delay: 400ms;">
+                        <div
+                            class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-400">
+                            <i class="ri-brain-line text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-4" data-i18n="skill_ai_title">AI & Automation</h3>
+                        <div class="flex flex-wrap">
+                            <span class="skill-tag">AI Tools</span>
+                            <span class="skill-tag">Prompt Engineering</span>
+                            <span class="skill-tag">AI Agents</span>
+                            <span class="skill-tag">Workflow Automation</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl reveal" style="transition-delay: 500ms;">
+                        <div
+                            class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4 text-pink-400">
+                            <i class="ri-tools-line text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-4" data-i18n="skill_tools_title">Tools</h3>
+                        <div class="flex flex-wrap">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Microsoft Office</span>
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">English B2-C1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 bg-dark-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="projects_title">Featured Projects</h2>
+                    <div class="w-20 h-1 bg-brand-500 mx-auto rounded-full" aria-hidden="true"></div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden reveal group mb-8 project-card">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <div
+                            class="relative h-64 lg:h-auto min-h-[16rem] bg-dark-800 flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+                            <img src="./assets/images/media__1774911940281.jpg" alt="SciCalc Pro Main UI"
+                                class="w-full h-full object-cover shrink-0 snap-center">
+                            <img src="./assets/images/media__1774911940383.jpg" alt="SciCalc Pro Function Premium"
+                                class="w-full h-full object-cover shrink-0 snap-center">
+                            <img src="./assets/images/media__1774911940397.jpg" alt="SciCalc Pro History"
+                                class="w-full h-full object-cover shrink-0 snap-center">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent lg:hidden pointer-events-none"
+                                aria-hidden="true"></div>
+                        </div>
+                        <div class="p-8 lg:p-12 flex flex-col justify-center">
+                            <div class="flex items-center gap-3 mb-4 flex-wrap">
+                                <span
+                                    class="px-3 py-1 bg-brand-500/10 text-brand-400 text-xs font-mono rounded border border-brand-500/20">Kotlin
+                                    / Android</span>
+                                <span
+                                    class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs font-mono rounded border border-purple-500/20">SQLite</span>
+                                <span
+                                    class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-mono rounded border border-green-500/20">Clean
+                                    Architecture</span>
+                            </div>
+                            <h3 class="text-3xl font-bold mb-4 text-white">SciCalc Pro</h3>
+                            <p class="text-gray-400 mb-6 leading-relaxed" data-i18n="project_desc">
+                                An advanced scientific calculator developed from scratch. What started as a personal
+                                challenge evolved into a robust engineering project with thousands of lines of clean,
+                                maintainable code following clean architecture principles.
+                            </p>
+                            <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                                <li class="flex items-center gap-3">
+                                    <i class="ri-check-line text-brand-400 shrink-0" aria-hidden="true"></i>
+                                    <span>Modern "Dark Mode" UI built natively with Kotlin.</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="ri-lock-unlock-line text-brand-400 shrink-0" aria-hidden="true"></i>
+                                    <span>User Auth & License key validation using SQLite.</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="ri-functions text-brand-400 shrink-0" aria-hidden="true"></i>
+                                    <span>Free Functions: Trigs, factorials, logs, rad/deg modes.</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="ri-vip-crown-line text-brand-400 shrink-0" aria-hidden="true"></i>
+                                    <span>Premium Functions: Bitwise (AND/OR/XOR), GCD/LCM, Permutations.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden reveal project-card">
+                    <div class="p-8 lg:p-12">
+                        <h3 class="text-2xl font-bold mb-6 text-white" data-i18n="project_arch_title">Project
+                            Architecture</h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-semibold mb-4 text-brand-400"
+                                    data-i18n="project_arch_structure">File Structure</h4>
+                                <div class="code-block text-gray-300" role="region" aria-label="Project file tree">
+                                    <div class="code-line"><span class="code-number">1</span><span
+                                            class="code-keyword">app/src/main/</span></div>
+                                    <div class="code-line"><span class="code-number">2</span><span> ├──
+                                            AndroidManifest.xml</span></div>
+                                    <div class="code-line"><span class="code-number">3</span><span> ├──
+                                            java/com/calculator/scientificcalc/</span></div>
+                                    <div class="code-line"><span class="code-number">4</span><span> │ ├──
+                                            MainActivity.kt</span></div>
+                                    <div class="code-line"><span class="code-number">5</span><span> │ ├──
+                                            LoginActivity.kt</span></div>
+                                    <div class="code-line"><span class="code-number">6</span><span> │ ├──
+                                            RegisterActivity.kt</span></div>
+                                    <div class="code-line"><span class="code-number">7</span><span> │ ├──
+                                            LicenseKeyActivity.kt</span></div>
+                                    <div class="code-line"><span class="code-number">8</span><span> │ ├──
+                                            CalculatorActivity.kt</span></div>
+                                    <div class="code-line"><span class="code-number">9</span><span> │ ├──
+                                            database/</span></div>
+                                    <div class="code-line"><span class="code-number">10</span><span> │ ├──
+                                            engine/</span></div>
+                                    <div class="code-line"><span class="code-number">11</span><span> │ ├── model/</span>
+                                    </div>
+                                    <div class="code-line"><span class="code-number">12</span><span> │ └── utils/</span>
+                                    </div>
+                                    <div class="code-line"><span class="code-number">13</span><span> └── res/</span>
+                                    </div>
+                                    <div class="code-line"><span class="code-number">14</span><span> ├── anim/</span>
+                                    </div>
+                                    <div class="code-line"><span class="code-number">15</span><span> ├──
+                                            drawable/</span></div>
+                                    <div class="code-line"><span class="code-number">16</span><span> ├── layout/</span>
+                                    </div>
+                                    <div class="code-line"><span class="code-number">17</span><span> └── values/</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-lg font-semibold mb-4 text-brand-400" data-i18n="project_arch_key">Key
+                                    Components</h4>
+                                <div class="space-y-4">
+                                    <div class="p-4 bg-dark-800/50 rounded-lg">
+                                        <h5 class="font-semibold text-white mb-2">Database Layer</h5>
+                                        <p class="text-sm text-gray-400" data-i18n="project_arch_db">SQLite database
+                                            with DBHelper for user management and CRUD operations through UserRepository
+                                        </p>
+                                    </div>
+                                    <div class="p-4 bg-dark-800/50 rounded-lg">
+                                        <h5 class="font-semibold text-white mb-2">Engine Layer</h5>
+                                        <p class="text-sm text-gray-400" data-i18n="project_arch_engine">CalcEngine.kt
+                                            for evaluation logic and ScientificFunctions.kt for mathematical operations
+                                        </p>
+                                    </div>
+                                    <div class="p-4 bg-dark-800/50 rounded-lg">
+                                        <h5 class="font-semibold text-white mb-2">Premium System</h5>
+                                        <p class="text-sm text-gray-400" data-i18n="project_arch_premium">
+                                            PremiumManager.kt handles session management and license key validation</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24 bg-dark-800/30">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="exp_title">Experience</h2>
+                    <div class="w-20 h-1 bg-brand-500 mx-auto rounded-full" aria-hidden="true"></div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="glass-card rounded-xl p-6 reveal">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">VM Group</h3>
+                                <p class="text-brand-400" data-i18n="exp_role1">Systems Assistant</p>
+                            </div>
+                            <span class="text-gray-400 text-sm font-mono mt-2 md:mt-0">2025 - 2026</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-start gap-2">
+                                <i class="ri-arrow-right-line text-brand-400 mt-1 shrink-0" aria-hidden="true"></i>
+                                <span data-i18n="exp_desc1_1">Review and optimization of computer equipment</span>
                             </li>
-                            <li class="flex items-center gap-3">
-                                <i class="ri-check-line text-brand-400 shrink-0" aria-hidden="true"></i>
-                                <span data-i18n="project_feat2">Complete authentication system with SQLite database</span>
+                            <li class="flex items-start gap-2">
+                                <i class="ri-arrow-right-line text-brand-400 mt-1 shrink-0" aria-hidden="true"></i>
+                                <span data-i18n="exp_desc1_2">Technical support and troubleshooting</span>
                             </li>
-                            <li class="flex items-center gap-3">
-                                <i class="ri-check-line text-brand-400 shrink-0" aria-hidden="true"></i>
-                                <span data-i18n="project_feat3">Premium license management and activation system</span>
+                            <li class="flex items-start gap-2">
+                                <i class="ri-arrow-right-line text-brand-400 mt-1 shrink-0" aria-hidden="true"></i>
+                                <span data-i18n="exp_desc1_3">Basic server management and LAMP stack deployment on
+                                    LAN</span>
                             </li>
-                            <li class="flex items-center gap-3">
-                                <i class="ri-check-line text-brand-400 shrink-0" aria-hidden="true"></i>
-                                <span data-i18n="project_feat4">Complete scientific functions (Trigonometry, Statistics, Conversions)</span>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card rounded-xl p-6 reveal" style="transition-delay: 100ms;">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">VM Group</h3>
+                                <p class="text-brand-400" data-i18n="exp_role2">Warehouse Assistant</p>
+                            </div>
+                            <span class="text-gray-400 text-sm font-mono mt-2 md:mt-0">2024 - 2025</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-start gap-2">
+                                <i class="ri-arrow-right-line text-brand-400 mt-1 shrink-0" aria-hidden="true"></i>
+                                <span data-i18n="exp_desc2_1">Reception, review and storage of equipment</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ri-arrow-right-line text-brand-400 mt-1 shrink-0" aria-hidden="true"></i>
+                                <span data-i18n="exp_desc2_2">Inventory management and organization</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ri-arrow-right-line text-brand-400 mt-1 shrink-0" aria-hidden="true"></i>
+                                <span data-i18n="exp_desc2_3">Quality control and equipment verification</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="glass-card rounded-2xl overflow-hidden reveal project-card">
-                <div class="p-8 lg:p-12">
-                    <h3 class="text-2xl font-bold mb-6 text-white" data-i18n="project_arch_title">Project Architecture</h3>
+        <!-- Education Section -->
+        <section class="py-24 bg-dark-900">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="edu_title">Education</h2>
+                    <div class="w-20 h-1 bg-brand-500 mx-auto rounded-full" aria-hidden="true"></div>
+                </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-lg font-semibold mb-4 text-brand-400" data-i18n="project_arch_structure">File Structure</h4>
-                            <div class="code-block text-gray-300" role="region" aria-label="Project file tree">
-                                <div class="code-line"><span class="code-number">1</span><span class="code-keyword">app/src/main/</span></div>
-                                <div class="code-line"><span class="code-number">2</span><span>  ├── AndroidManifest.xml</span></div>
-                                <div class="code-line"><span class="code-number">3</span><span>  ├── java/com/calculator/scientificcalc/</span></div>
-                                <div class="code-line"><span class="code-number">4</span><span>  │   ├── MainActivity.kt</span></div>
-                                <div class="code-line"><span class="code-number">5</span><span>  │   ├── LoginActivity.kt</span></div>
-                                <div class="code-line"><span class="code-number">6</span><span>  │   ├── RegisterActivity.kt</span></div>
-                                <div class="code-line"><span class="code-number">7</span><span>  │   ├── LicenseKeyActivity.kt</span></div>
-                                <div class="code-line"><span class="code-number">8</span><span>  │   ├── CalculatorActivity.kt</span></div>
-                                <div class="code-line"><span class="code-number">9</span><span>  │   ├── database/</span></div>
-                                <div class="code-line"><span class="code-number">10</span><span>  │   ├── engine/</span></div>
-                                <div class="code-line"><span class="code-number">11</span><span>  │   ├── model/</span></div>
-                                <div class="code-line"><span class="code-number">12</span><span>  │   └── utils/</span></div>
-                                <div class="code-line"><span class="code-number">13</span><span>  └── res/</span></div>
-                                <div class="code-line"><span class="code-number">14</span><span>      ├── anim/</span></div>
-                                <div class="code-line"><span class="code-number">15</span><span>      ├── drawable/</span></div>
-                                <div class="code-line"><span class="code-number">16</span><span>      ├── layout/</span></div>
-                                <div class="code-line"><span class="code-number">17</span><span>      └── values/</span></div>
+                <div class="space-y-8">
+                    <div class="glass-card rounded-xl p-6 reveal">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white" data-i18n="edu_uni">Central University of
+                                    Nicaragua</h3>
+                                <p class="text-brand-400" data-i18n="edu_degree">Systems Engineering Student</p>
                             </div>
+                            <span class="text-gray-400 text-sm font-mono mt-2 md:mt-0">2024 - Present</span>
                         </div>
+                    </div>
 
-                        <div>
-                            <h4 class="text-lg font-semibold mb-4 text-brand-400" data-i18n="project_arch_key">Key Components</h4>
-                            <div class="space-y-4">
-                                <div class="p-4 bg-dark-800/50 rounded-lg">
-                                    <h5 class="font-semibold text-white mb-2">Database Layer</h5>
-                                    <p class="text-sm text-gray-400" data-i18n="project_arch_db">SQLite database with DBHelper for user management and CRUD operations through UserRepository</p>
-                                </div>
-                                <div class="p-4 bg-dark-800/50 rounded-lg">
-                                    <h5 class="font-semibold text-white mb-2">Engine Layer</h5>
-                                    <p class="text-sm text-gray-400" data-i18n="project_arch_engine">CalcEngine.kt for evaluation logic and ScientificFunctions.kt for mathematical operations</p>
-                                </div>
-                                <div class="p-4 bg-dark-800/50 rounded-lg">
-                                    <h5 class="font-semibold text-white mb-2">Premium System</h5>
-                                    <p class="text-sm text-gray-400" data-i18n="project_arch_premium">PremiumManager.kt handles session management and license key validation</p>
-                                </div>
+                    <div class="glass-card rounded-xl p-6 reveal" style="transition-delay: 100ms;">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white" data-i18n="edu_school">Bautista College of
+                                    Managua</h3>
+                                <p class="text-brand-400" data-i18n="edu_highschool">High School Diploma in Sciences and
+                                    Letters</p>
                             </div>
+                            <span class="text-gray-400 text-sm font-mono mt-2 md:mt-0">2019 - 2023</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-24 bg-dark-800/30">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="exp_title">Experience</h2>
-                <div class="w-20 h-1 bg-brand-500 mx-auto rounded-full" aria-hidden="true"></div>
-            </div>
-
-            <div class="space-y-8">
-                <div class="glass-card rounded-xl p-6 reveal">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white">VM Group</h3>
-                            <p class="text-brand-400" data-i18n="exp_role1">Systems Assistant</p>
-                        </div>
-                        <span class="text-gray-400 text-sm font-mono mt-2 md:mt-0">2025 - 2026</span>
-                    </div>
-                    <ul class="space-y-2 text-gray-300">
-                        <li class="flex items-start gap-2">
-                            <i class="ri-arrow-right-line text-brand-400 mt-1 shrink-0" aria-hidden="true"></i>
-                            <span data-i18n="exp_desc1_1">Review and optimization of computer equipment</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="ri-arrow-right-line text-brand-400 mt-1 shrink-0" aria-hidden="true"></i>
-                            <span data-i18n="exp_desc1_2">Technical support and troubleshooting</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="ri-arrow-right-line text-brand-400 mt-1 shrink-0" aria-hidden="true"></i>
-                            <span data-i18n="exp_desc1_3">Basic server management and LAMP stack deployment on LAN</span>
-                        </li>
-                    </ul>
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-dark-800/50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="contact_title">Get In Touch</h2>
+                    <p class="text-gray-400" data-i18n="contact_subtitle">Click on any button below to contact me
+                        directly</p>
                 </div>
 
-                <div class="glass-card rounded-xl p-6 reveal" style="transition-delay: 100ms;">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white">VM Group</h3>
-                            <p class="text-brand-400" data-i18n="exp_role2">Warehouse Assistant</p>
-                        </div>
-                        <span class="text-gray-400 text-sm font-mono mt-2 md:mt-0">2024 - 2025</span>
+                <div class="glass-card rounded-2xl p-8 md:p-12 reveal">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <a href="mailto:b1vindell@gmail.com"
+                            class="contact-btn glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:bg-white/10">
+                            <div
+                                class="w-16 h-16 bg-brand-500/20 rounded-full flex items-center justify-center text-brand-400">
+                                <i class="ri-mail-send-line text-3xl" aria-hidden="true"></i>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-gray-400 text-sm mb-1" data-i18n="contact_email_label">Email</p>
+                                <p class="text-white font-medium">b1vindell@gmail.com</p>
+                            </div>
+                            <span
+                                class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white rounded-full text-sm font-medium transition-all"
+                                data-i18n="contact_send_email">Send Email</span>
+                        </a>
+
+                        <a href="tel:+50589146968"
+                            class="contact-btn glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:bg-white/10">
+                            <div
+                                class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-400">
+                                <i class="ri-phone-line text-3xl" aria-hidden="true"></i>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-gray-400 text-sm mb-1" data-i18n="contact_phone_label">Phone</p>
+                                <p class="text-white font-medium">+505 8914 6968</p>
+                            </div>
+                            <span
+                                class="px-4 py-2 bg-green-600 hover:bg-green-500 text-white rounded-full text-sm font-medium transition-all"
+                                data-i18n="contact_call">Call Now</span>
+                        </a>
+
+                        <a href="https://wa.me/50589146968" target="_blank" rel="noopener noreferrer"
+                            class="contact-btn glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:bg-white/10">
+                            <div
+                                class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-400">
+                                <i class="ri-whatsapp-line text-3xl" aria-hidden="true"></i>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-gray-400 text-sm mb-1" data-i18n="contact_whatsapp_label">WhatsApp</p>
+                                <p class="text-white font-medium">+505 8914 6968</p>
+                            </div>
+                            <span
+                                class="px-4 py-2 bg-green-600 hover:bg-green-500 text-white rounded-full text-sm font-medium transition-all"
+                                data-i18n="contact_chat">Chat Now</span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/lvindellb" target="_blank" rel="noopener noreferrer"
+                            class="contact-btn glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:bg-white/10 md:col-span-2 md:mx-auto md:w-full max-w-md">
+                            <div
+                                class="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400">
+                                <i class="ri-linkedin-box-line text-3xl" aria-hidden="true"></i>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-gray-400 text-sm mb-1" data-i18n="contact_linkedin_label">LinkedIn</p>
+                                <p class="text-white font-medium">linkedin.com/in/lvindellb</p>
+                            </div>
+                            <span
+                                class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-medium transition-all"
+                                data-i18n="contact_view_profile">View Profile</span>
+                        </a>
                     </div>
-                    <ul class="space-y-2 text-gray-300">
-                        <li class="flex items-start gap-2">
-                            <i class="ri-arrow-right-line text-brand-400 mt-1 shrink-0" aria-hidden="true"></i>
-                            <span data-i18n="exp_desc2_1">Reception, review and storage of equipment</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="ri-arrow-right-line text-brand-400 mt-1 shrink-0" aria-hidden="true"></i>
-                            <span data-i18n="exp_desc2_2">Inventory management and organization</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="ri-arrow-right-line text-brand-400 mt-1 shrink-0" aria-hidden="true"></i>
-                            <span data-i18n="exp_desc2_3">Quality control and equipment verification</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Education Section -->
-    <section class="py-24 bg-dark-900">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="edu_title">Education</h2>
-                <div class="w-20 h-1 bg-brand-500 mx-auto rounded-full" aria-hidden="true"></div>
-            </div>
-
-            <div class="space-y-8">
-                <div class="glass-card rounded-xl p-6 reveal">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white" data-i18n="edu_uni">Central University of Nicaragua</h3>
-                            <p class="text-brand-400" data-i18n="edu_degree">Systems Engineering Student</p>
-                        </div>
-                        <span class="text-gray-400 text-sm font-mono mt-2 md:mt-0">2024 - Present</span>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-6 reveal" style="transition-delay: 100ms;">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white" data-i18n="edu_school">Bautista College of Managua</h3>
-                            <p class="text-brand-400" data-i18n="edu_highschool">High School Diploma in Sciences and Letters</p>
-                        </div>
-                        <span class="text-gray-400 text-sm font-mono mt-2 md:mt-0">2019 - 2023</span>
+                    <div class="mt-8 text-center">
+                        <p class="text-gray-400 text-sm" data-i18n="contact_note">All buttons will open the respective
+                            app on your device</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-dark-800/50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="contact_title">Get In Touch</h2>
-                <p class="text-gray-400" data-i18n="contact_subtitle">Click on any button below to contact me directly</p>
-            </div>
-
-            <div class="glass-card rounded-2xl p-8 md:p-12 reveal">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <a href="mailto:b1vindell@gmail.com" class="contact-btn glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:bg-white/10">
-                        <div class="w-16 h-16 bg-brand-500/20 rounded-full flex items-center justify-center text-brand-400">
-                            <i class="ri-mail-send-line text-3xl" aria-hidden="true"></i>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-gray-400 text-sm mb-1" data-i18n="contact_email_label">Email</p>
-                            <p class="text-white font-medium">b1vindell@gmail.com</p>
-                        </div>
-                        <span class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white rounded-full text-sm font-medium transition-all" data-i18n="contact_send_email">Send Email</span>
-                    </a>
-
-                    <a href="tel:+50589146968" class="contact-btn glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:bg-white/10">
-                        <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-400">
-                            <i class="ri-phone-line text-3xl" aria-hidden="true"></i>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-gray-400 text-sm mb-1" data-i18n="contact_phone_label">Phone</p>
-                            <p class="text-white font-medium">+505 8914 6968</p>
-                        </div>
-                        <span class="px-4 py-2 bg-green-600 hover:bg-green-500 text-white rounded-full text-sm font-medium transition-all" data-i18n="contact_call">Call Now</span>
-                    </a>
-
-                    <a href="https://wa.me/50589146968" target="_blank" rel="noopener noreferrer" class="contact-btn glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:bg-white/10">
-                        <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-400">
-                            <i class="ri-whatsapp-line text-3xl" aria-hidden="true"></i>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-gray-400 text-sm mb-1" data-i18n="contact_whatsapp_label">WhatsApp</p>
-                            <p class="text-white font-medium">+505 8914 6968</p>
-                        </div>
-                        <span class="px-4 py-2 bg-green-600 hover:bg-green-500 text-white rounded-full text-sm font-medium transition-all" data-i18n="contact_chat">Chat Now</span>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/lvindellb" target="_blank" rel="noopener noreferrer" class="contact-btn glass p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:bg-white/10 md:col-span-2 md:mx-auto md:w-full max-w-md">
-                        <div class="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400">
-                            <i class="ri-linkedin-box-line text-3xl" aria-hidden="true"></i>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-gray-400 text-sm mb-1" data-i18n="contact_linkedin_label">LinkedIn</p>
-                            <p class="text-white font-medium">linkedin.com/in/lvindellb</p>
-                        </div>
-                        <span class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-medium transition-all" data-i18n="contact_view_profile">View Profile</span>
-                    </a>
-                </div>
-
-                <div class="mt-8 text-center">
-                    <p class="text-gray-400 text-sm" data-i18n="contact_note">All buttons will open the respective app on your device</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -784,16 +949,23 @@
                     <p class="text-2xl font-bold font-mono text-white">
                         LV<span class="text-brand-400">.dev</span>
                     </p>
-                    <p class="text-gray-400 text-sm mt-2" data-i18n="footer_rights">© 2026 Bruno López. All rights reserved.</p>
+                    <p class="text-gray-400 text-sm mt-2" data-i18n="footer_rights">© 2026 Bruno López. All rights
+                        reserved.</p>
                 </div>
                 <div class="flex items-center gap-4">
-                    <a href="https://www.linkedin.com/in/lvindellb" target="_blank" rel="noopener noreferrer" class="w-10 h-10 glass rounded-full flex items-center justify-center text-gray-400 hover:text-brand-400 hover:border-brand-400 transition-all contact-btn" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/lvindellb" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 glass rounded-full flex items-center justify-center text-gray-400 hover:text-brand-400 hover:border-brand-400 transition-all contact-btn"
+                        aria-label="LinkedIn">
                         <i class="ri-linkedin-box-fill text-xl" aria-hidden="true"></i>
                     </a>
-                    <a href="mailto:b1vindell@gmail.com" class="w-10 h-10 glass rounded-full flex items-center justify-center text-gray-400 hover:text-brand-400 hover:border-brand-400 transition-all contact-btn" aria-label="Email">
+                    <a href="mailto:b1vindell@gmail.com"
+                        class="w-10 h-10 glass rounded-full flex items-center justify-center text-gray-400 hover:text-brand-400 hover:border-brand-400 transition-all contact-btn"
+                        aria-label="Email">
                         <i class="ri-mail-send-fill text-xl" aria-hidden="true"></i>
                     </a>
-                    <a href="tel:+50589146968" class="w-10 h-10 glass rounded-full flex items-center justify-center text-gray-400 hover:text-brand-400 hover:border-brand-400 transition-all contact-btn" aria-label="Phone">
+                    <a href="tel:+50589146968"
+                        class="w-10 h-10 glass rounded-full flex items-center justify-center text-gray-400 hover:text-brand-400 hover:border-brand-400 transition-all contact-btn"
+                        aria-label="Phone">
                         <i class="ri-phone-fill text-xl" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -802,296 +974,297 @@
     </footer>
 
     <script>
-        (function () {
-            'use strict';
+            (function () {
+                'use strict';
 
-            var LANG_KEY = 'portfolio-lang';
-            var translations = {
-                en: {
-                    nav_about: "About",
-                    nav_skills: "Skills",
-                    nav_projects: "Projects",
-                    nav_experience: "Experience",
-                    nav_contact: "Contact",
-                    hero_available: "Systems Engineering Student",
-                    hero_hi: "Hi, I'm",
-                    hero_desc: "Systems Engineering student focused on <span class=\"text-white font-semibold\">software development</span> and clean architecture. I build robust applications and turn ideas into functional solutions.",
-                    hero_projects: "View Projects",
-                    hero_contact: "Contact",
-                    hero_tag: "Building Solutions That Work",
-                    about_title: "About Me",
-                    about_p1: "I am Bruno, a 19-year-old third-year Systems Engineering student specializing in software development and clean architecture. I am focused on rapid learning and passionate about building robust applications.",
-                    about_p2: "In development, I build applications in C# using Visual Studio (Windows Forms and Xamarin). A notable example is SciCalc Pro, a scientific calculator that evolved into a robust engineering project with thousands of lines of clean, maintainable code following clean architecture principles.",
-                    about_p3: "I am also expanding my skills in modern web development, creating responsive web applications with complete front-end and back-end integration.",
-                    about_p4: "My practical experience at VM Group provided direct exposure to technical problem-solving, IT support, equipment optimization, and basic server management including LAMP stack deployment on LAN environments.",
-                    about_p5: "Driven by a natural curiosity for technology, history, economics, operating systems, and continuous learning, I maintain solid B2-C1 English reading comprehension while actively improving my speaking and writing skills.",
-                    about_p6: "I am committed to continuous learning and actively seeking opportunities to apply my skills, grow professionally, and contribute meaningful value to innovative projects.",
-                    skills_title: "Technical Skills",
-                    skills_subtitle: "My tech stack and main tools",
-                    skill_dev_title: "Development",
-                    skill_data_title: "Data & Database",
-                    skill_sys_title: "Systems & Networks",
-                    skill_security_title: "Cybersecurity",
-                    skill_ai_title: "AI & Automation",
-                    skill_tools_title: "Tools",
-                    projects_title: "Featured Projects",
-                    project_desc: "An advanced scientific calculator developed from scratch. What started as a personal challenge evolved into a robust engineering project with thousands of lines of clean, maintainable code following clean architecture principles.",
-                    project_feat1: "Modern \"Dark Mode\" interface with smooth animations",
-                    project_feat2: "Complete authentication system with SQLite database",
-                    project_feat3: "Premium license management and activation system",
-                    project_feat4: "Complete scientific functions (Trigonometry, Statistics, Conversions)",
-                    project_arch_title: "Project Architecture",
-                    project_arch_structure: "File Structure",
-                    project_arch_key: "Key Components",
-                    project_arch_db: "SQLite database with DBHelper for user management and CRUD operations through UserRepository",
-                    project_arch_engine: "CalcEngine.kt for evaluation logic and ScientificFunctions.kt for mathematical operations",
-                    project_arch_premium: "PremiumManager.kt handles session management and license key validation",
-                    exp_title: "Experience",
-                    exp_role1: "Systems Assistant",
-                    exp_desc1_1: "Review and optimization of computer equipment",
-                    exp_desc1_2: "Technical support and troubleshooting",
-                    exp_desc1_3: "Basic server management and LAMP stack deployment on LAN",
-                    exp_role2: "Warehouse Assistant",
-                    exp_desc2_1: "Reception, review and storage of equipment",
-                    exp_desc2_2: "Inventory management and organization",
-                    exp_desc2_3: "Quality control and equipment verification",
-                    edu_title: "Education",
-                    edu_uni: "Central University of Nicaragua",
-                    edu_degree: "Systems Engineering Student",
-                    edu_school: "Bautista College of Managua",
-                    edu_highschool: "High School Diploma in Sciences and Letters",
-                    contact_title: "Get In Touch",
-                    contact_subtitle: "Click on any button below to contact me directly",
-                    contact_email_label: "Email",
-                    contact_phone_label: "Phone",
-                    contact_whatsapp_label: "WhatsApp",
-                    contact_linkedin_label: "LinkedIn",
-                    contact_send_email: "Send Email",
-                    contact_call: "Call Now",
-                    contact_chat: "Chat Now",
-                    contact_view_profile: "View Profile",
-                    contact_note: "All buttons will open the respective app on your device",
-                    footer_rights: "© 2026 Bruno López. All rights reserved."
-                },
-                es: {
-                    nav_about: "Sobre Mí",
-                    nav_skills: "Habilidades",
-                    nav_projects: "Proyectos",
-                    nav_experience: "Experiencia",
-                    nav_contact: "Contacto",
-                    hero_available: "Estudiante de Ingeniería en Sistemas",
-                    hero_hi: "Hola, soy",
-                    hero_desc: "Estudiante de Ingeniería en Sistemas enfocado en <span class=\"text-white font-semibold\">desarrollo de software</span> y arquitectura limpia. Construyo aplicaciones robustas y convierto ideas en soluciones funcionales.",
-                    hero_projects: "Ver Proyectos",
-                    hero_contact: "Contacto",
-                    hero_tag: "Construyendo Soluciones Que Funcionan",
-                    about_title: "Sobre Mí",
-                    about_p1: "Soy Bruno, un estudiante de tercer año de Ingeniería en Sistemas de 19 años, especializado en desarrollo de software y arquitectura limpia. Enfocado en el aprendizaje rápido y apasionado por construir aplicaciones robustas.",
-                    about_p2: "En desarrollo, construyo aplicaciones en C# usando Visual Studio (Windows Forms y Xamarin). Un ejemplo destacado es SciCalc Pro, una calculadora científica que evolucionó en un proyecto de ingeniería robusto con miles de líneas de código limpio y mantenible siguiendo principios de arquitectura limpia.",
-                    about_p3: "También estoy expandiendo mis habilidades en desarrollo web moderno, creando aplicaciones web responsivas con integración completa de front-end y back-end.",
-                    about_p4: "Mi experiencia práctica en VM Group me brindó exposición directa a la resolución de problemas técnicos, soporte de TI, optimización de equipos y gestión básica de servidores incluyendo implementación de stack LAMP en entornos LAN.",
-                    about_p5: "Impulsado por una curiosidad natural por la tecnología, historia, economía, sistemas operativos y aprendizaje continuo, mantengo una sólida comprensión lectora de inglés B2-C1 mientras mejoro activamente mis habilidades de speaking y writing.",
-                    about_p6: "Estoy comprometido con el aprendizaje continuo y buscando activamente oportunidades para aplicar mis habilidades, crecer profesionalmente y contribuir con valor significativo a proyectos innovadores.",
-                    skills_title: "Habilidades Técnicas",
-                    skills_subtitle: "Mi stack tecnológico y herramientas principales",
-                    skill_dev_title: "Desarrollo",
-                    skill_data_title: "Datos y Base de Datos",
-                    skill_sys_title: "Sistemas y Redes",
-                    skill_security_title: "Ciberseguridad",
-                    skill_ai_title: "IA y Automatización",
-                    skill_tools_title: "Herramientas",
-                    projects_title: "Proyectos Destacados",
-                    project_desc: "Una calculadora científica avanzada desarrollada desde cero. Lo que comenzó como un reto personal evolucionó en un proyecto de ingeniería robusto con miles de líneas de código limpio y mantenible siguiendo principios de arquitectura limpia.",
-                    project_feat1: "Interfaz moderna estilo \"Dark Mode\" con animaciones suaves",
-                    project_feat2: "Sistema de autenticación completo con base de datos SQLite",
-                    project_feat3: "Gestión de licencias Premium y sistema de activación",
-                    project_feat4: "Funciones científicas completas (Trigonometría, Estadística, Conversiones)",
-                    project_arch_title: "Arquitectura del Proyecto",
-                    project_arch_structure: "Estructura de Archivos",
-                    project_arch_key: "Componentes Clave",
-                    project_arch_db: "Base de datos SQLite con DBHelper para gestión de usuarios y operaciones CRUD a través de UserRepository",
-                    project_arch_engine: "CalcEngine.kt para lógica de evaluación y ScientificFunctions.kt para operaciones matemáticas",
-                    project_arch_premium: "PremiumManager.kt maneja la gestión de sesiones y validación de claves de licencia",
-                    exp_title: "Experiencia",
-                    exp_role1: "Asistente de Sistemas",
-                    exp_desc1_1: "Revisión y optimización de equipos de cómputo",
-                    exp_desc1_2: "Soporte técnico y resolución de problemas",
-                    exp_desc1_3: "Gestión básica de servidores e implementación de stack LAMP en LAN",
-                    exp_role2: "Auxiliar de Bodega",
-                    exp_desc2_1: "Recepción, revisión y resguardo de equipos",
-                    exp_desc2_2: "Gestión y organización de inventario",
-                    exp_desc2_3: "Control de calidad y verificación de equipos",
-                    edu_title: "Educación",
-                    edu_uni: "Universidad Central de Nicaragua",
-                    edu_degree: "Estudiante de Ingeniería en Sistemas",
-                    edu_school: "Colegio Bautista de Managua",
-                    edu_highschool: "Bachiller en Ciencias y Letras",
-                    contact_title: "Contacto",
-                    contact_subtitle: "Haz click en cualquier botón para contactarme directamente",
-                    contact_email_label: "Correo",
-                    contact_phone_label: "Teléfono",
-                    contact_whatsapp_label: "WhatsApp",
-                    contact_linkedin_label: "LinkedIn",
-                    contact_send_email: "Enviar Correo",
-                    contact_call: "Llamar Ahora",
-                    contact_chat: "Chatear Ahora",
-                    contact_view_profile: "Ver Perfil",
-                    contact_note: "Todos los botones abrirán la aplicación respectiva en tu dispositivo",
-                    footer_rights: "© 2026 Bruno López. Todos los derechos reservados."
-                }
-            };
-
-            var currentLang = 'en';
-
-            function getStoredLang() {
-                try {
-                    var s = localStorage.getItem(LANG_KEY);
-                    if (s && translations[s]) return s;
-                } catch (e) {}
-                return null;
-            }
-
-            function setStoredLang(lang) {
-                try {
-                    localStorage.setItem(LANG_KEY, lang);
-                } catch (e) {}
-            }
-
-            function toggleLangDropdown() {
-                var dropdown = document.getElementById('langDropdown');
-                var toggle = document.getElementById('langToggle');
-                if (!dropdown || !toggle) return;
-                var open = !dropdown.classList.contains('active');
-                dropdown.classList.toggle('active', open);
-                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-            }
-
-            function setLanguage(lang) {
-                if (!translations[lang]) return;
-                currentLang = lang;
-                setStoredLang(lang);
-
-                document.querySelectorAll('[id^="check-"]').forEach(function (el) {
-                    el.classList.add('hidden');
-                });
-                var checkEl = document.getElementById('check-' + lang);
-                if (checkEl) checkEl.classList.remove('hidden');
-
-                document.querySelectorAll('[data-lang]').forEach(function (btn) {
-                    btn.classList.remove('active');
-                    btn.setAttribute('aria-checked', 'false');
-                });
-                var activeBtn = document.querySelector('[data-lang="' + lang + '"]');
-                if (activeBtn) {
-                    activeBtn.classList.add('active');
-                    activeBtn.setAttribute('aria-checked', 'true');
-                }
-
-                var langLabel = document.getElementById('langLabel');
-                if (langLabel) langLabel.textContent = lang.toUpperCase();
-
-                document.querySelectorAll('[data-i18n]').forEach(function (element) {
-                    var key = element.getAttribute('data-i18n');
-                    var t = translations[lang][key];
-                    if (t === undefined) return;
-                    if (/<[a-z][\s\S]*>/i.test(t)) {
-                        element.innerHTML = t;
-                    } else {
-                        element.textContent = t;
+                var LANG_KEY = 'portfolio-lang';
+                var translations = {
+                    en: {
+                        nav_about: "About",
+                        nav_skills: "Skills",
+                        nav_projects: "Projects",
+                        nav_experience: "Experience",
+                        nav_contact: "Contact",
+                        hero_available: "Systems Engineering Student",
+                        hero_hi: "Hi, I'm",
+                        hero_desc: "Systems Engineering student focused on <span class=\"text-white font-semibold\">software development</span> and clean architecture. I build robust applications and turn ideas into functional solutions.",
+                        hero_projects: "View Projects",
+                        hero_contact: "Contact",
+                        hero_tag: "Building Solutions That Work",
+                        about_title: "About Me",
+                        about_p1: "I am Bruno, a 19-year-old third-year Systems Engineering student specializing in software development and clean architecture. I am focused on rapid learning and passionate about building robust applications.",
+                        about_p2: "In development, I build applications in C# using Visual Studio (Windows Forms and Xamarin). A notable example is SciCalc Pro, a scientific calculator that evolved into a robust engineering project with thousands of lines of clean, maintainable code following clean architecture principles.",
+                        about_p3: "I am also expanding my skills in modern web development, creating responsive web applications with complete front-end and back-end integration.",
+                        about_p4: "My practical experience at VM Group provided direct exposure to technical problem-solving, IT support, equipment optimization, and basic server management including LAMP stack deployment on LAN environments.",
+                        about_p5: "Driven by a natural curiosity for technology, history, economics, operating systems, and continuous learning, I maintain solid B2-C1 English reading comprehension while actively improving my speaking and writing skills.",
+                        about_p6: "I am committed to continuous learning and actively seeking opportunities to apply my skills, grow professionally, and contribute meaningful value to innovative projects.",
+                        skills_title: "Technical Skills",
+                        skills_subtitle: "My tech stack and main tools",
+                        skill_dev_title: "Development",
+                        skill_data_title: "Data & Database",
+                        skill_sys_title: "Systems & Networks",
+                        skill_security_title: "Cybersecurity",
+                        skill_ai_title: "AI & Automation",
+                        skill_tools_title: "Tools",
+                        projects_title: "Featured Projects",
+                        project_desc: "An advanced scientific calculator developed from scratch. What started as a personal challenge evolved into a robust engineering project with thousands of lines of clean, maintainable code following clean architecture principles.",
+                        project_feat1: "Modern \"Dark Mode\" interface with smooth animations",
+                        project_feat2: "Complete authentication system with SQLite database",
+                        project_feat3: "Premium license management and activation system",
+                        project_feat4: "Complete scientific functions (Trigonometry, Statistics, Conversions)",
+                        project_arch_title: "Project Architecture",
+                        project_arch_structure: "File Structure",
+                        project_arch_key: "Key Components",
+                        project_arch_db: "SQLite database with DBHelper for user management and CRUD operations through UserRepository",
+                        project_arch_engine: "CalcEngine.kt for evaluation logic and ScientificFunctions.kt for mathematical operations",
+                        project_arch_premium: "PremiumManager.kt handles session management and license key validation",
+                        exp_title: "Experience",
+                        exp_role1: "Systems Assistant",
+                        exp_desc1_1: "Review and optimization of computer equipment",
+                        exp_desc1_2: "Technical support and troubleshooting",
+                        exp_desc1_3: "Basic server management and LAMP stack deployment on LAN",
+                        exp_role2: "Warehouse Assistant",
+                        exp_desc2_1: "Reception, review and storage of equipment",
+                        exp_desc2_2: "Inventory management and organization",
+                        exp_desc2_3: "Quality control and equipment verification",
+                        edu_title: "Education",
+                        edu_uni: "Central University of Nicaragua",
+                        edu_degree: "Systems Engineering Student",
+                        edu_school: "Bautista College of Managua",
+                        edu_highschool: "High School Diploma in Sciences and Letters",
+                        contact_title: "Get In Touch",
+                        contact_subtitle: "Click on any button below to contact me directly",
+                        contact_email_label: "Email",
+                        contact_phone_label: "Phone",
+                        contact_whatsapp_label: "WhatsApp",
+                        contact_linkedin_label: "LinkedIn",
+                        contact_send_email: "Send Email",
+                        contact_call: "Call Now",
+                        contact_chat: "Chat Now",
+                        contact_view_profile: "View Profile",
+                        contact_note: "All buttons will open the respective app on your device",
+                        footer_rights: "© 2026 Bruno López. All rights reserved."
+                    },
+                    es: {
+                        nav_about: "Sobre Mí",
+                        nav_skills: "Habilidades",
+                        nav_projects: "Proyectos",
+                        nav_experience: "Experiencia",
+                        nav_contact: "Contacto",
+                        hero_available: "Estudiante de Ingeniería en Sistemas",
+                        hero_hi: "Hola, soy",
+                        hero_desc: "Estudiante de Ingeniería en Sistemas enfocado en <span class=\"text-white font-semibold\">desarrollo de software</span> y arquitectura limpia. Construyo aplicaciones robustas y convierto ideas en soluciones funcionales.",
+                        hero_projects: "Ver Proyectos",
+                        hero_contact: "Contacto",
+                        hero_tag: "Construyendo Soluciones Que Funcionan",
+                        about_title: "Sobre Mí",
+                        about_p1: "Soy Bruno, un estudiante de tercer año de Ingeniería en Sistemas de 19 años, especializado en desarrollo de software y arquitectura limpia. Enfocado en el aprendizaje rápido y apasionado por construir aplicaciones robustas.",
+                        about_p2: "En desarrollo, construyo aplicaciones en C# usando Visual Studio (Windows Forms y Xamarin). Un ejemplo destacado es SciCalc Pro, una calculadora científica que evolucionó en un proyecto de ingeniería robusto con miles de líneas de código limpio y mantenible siguiendo principios de arquitectura limpia.",
+                        about_p3: "También estoy expandiendo mis habilidades en desarrollo web moderno, creando aplicaciones web responsivas con integración completa de front-end y back-end.",
+                        about_p4: "Mi experiencia práctica en VM Group me brindó exposición directa a la resolución de problemas técnicos, soporte de TI, optimización de equipos y gestión básica de servidores incluyendo implementación de stack LAMP en entornos LAN.",
+                        about_p5: "Impulsado por una curiosidad natural por la tecnología, historia, economía, sistemas operativos y aprendizaje continuo, mantengo una sólida comprensión lectora de inglés B2-C1 mientras mejoro activamente mis habilidades de speaking y writing.",
+                        about_p6: "Estoy comprometido con el aprendizaje continuo y buscando activamente oportunidades para aplicar mis habilidades, crecer profesionalmente y contribuir con valor significativo a proyectos innovadores.",
+                        skills_title: "Habilidades Técnicas",
+                        skills_subtitle: "Mi stack tecnológico y herramientas principales",
+                        skill_dev_title: "Desarrollo",
+                        skill_data_title: "Datos y Base de Datos",
+                        skill_sys_title: "Sistemas y Redes",
+                        skill_security_title: "Ciberseguridad",
+                        skill_ai_title: "IA y Automatización",
+                        skill_tools_title: "Herramientas",
+                        projects_title: "Proyectos Destacados",
+                        project_desc: "Una calculadora científica avanzada desarrollada desde cero. Lo que comenzó como un reto personal evolucionó en un proyecto de ingeniería robusto con miles de líneas de código limpio y mantenible siguiendo principios de arquitectura limpia.",
+                        project_feat1: "Interfaz moderna estilo \"Dark Mode\" con animaciones suaves",
+                        project_feat2: "Sistema de autenticación completo con base de datos SQLite",
+                        project_feat3: "Gestión de licencias Premium y sistema de activación",
+                        project_feat4: "Funciones científicas completas (Trigonometría, Estadística, Conversiones)",
+                        project_arch_title: "Arquitectura del Proyecto",
+                        project_arch_structure: "Estructura de Archivos",
+                        project_arch_key: "Componentes Clave",
+                        project_arch_db: "Base de datos SQLite con DBHelper para gestión de usuarios y operaciones CRUD a través de UserRepository",
+                        project_arch_engine: "CalcEngine.kt para lógica de evaluación y ScientificFunctions.kt para operaciones matemáticas",
+                        project_arch_premium: "PremiumManager.kt maneja la gestión de sesiones y validación de claves de licencia",
+                        exp_title: "Experiencia",
+                        exp_role1: "Asistente de Sistemas",
+                        exp_desc1_1: "Revisión y optimización de equipos de cómputo",
+                        exp_desc1_2: "Soporte técnico y resolución de problemas",
+                        exp_desc1_3: "Gestión básica de servidores e implementación de stack LAMP en LAN",
+                        exp_role2: "Auxiliar de Bodega",
+                        exp_desc2_1: "Recepción, revisión y resguardo de equipos",
+                        exp_desc2_2: "Gestión y organización de inventario",
+                        exp_desc2_3: "Control de calidad y verificación de equipos",
+                        edu_title: "Educación",
+                        edu_uni: "Universidad Central de Nicaragua",
+                        edu_degree: "Estudiante de Ingeniería en Sistemas",
+                        edu_school: "Colegio Bautista de Managua",
+                        edu_highschool: "Bachiller en Ciencias y Letras",
+                        contact_title: "Contacto",
+                        contact_subtitle: "Haz click en cualquier botón para contactarme directamente",
+                        contact_email_label: "Correo",
+                        contact_phone_label: "Teléfono",
+                        contact_whatsapp_label: "WhatsApp",
+                        contact_linkedin_label: "LinkedIn",
+                        contact_send_email: "Enviar Correo",
+                        contact_call: "Llamar Ahora",
+                        contact_chat: "Chatear Ahora",
+                        contact_view_profile: "Ver Perfil",
+                        contact_note: "Todos los botones abrirán la aplicación respectiva en tu dispositivo",
+                        footer_rights: "© 2026 Bruno López. Todos los derechos reservados."
                     }
-                });
+                };
 
-                document.documentElement.lang = lang;
+                var currentLang = 'en';
 
-                var dropdown = document.getElementById('langDropdown');
-                var toggle = document.getElementById('langToggle');
-                if (dropdown) dropdown.classList.remove('active');
-                if (toggle) toggle.setAttribute('aria-expanded', 'false');
-            }
-
-            function toggleMenu() {
-                var menu = document.getElementById('mobile-menu');
-                var btn = document.getElementById('mobileMenuBtn');
-                if (!menu || !btn) return;
-                var hidden = menu.classList.toggle('hidden');
-                btn.setAttribute('aria-expanded', hidden ? 'false' : 'true');
-            }
-
-            document.addEventListener('click', function (e) {
-                var dropdown = document.getElementById('langDropdown');
-                var toggle = document.getElementById('langToggle');
-                if (dropdown && toggle && !dropdown.contains(e.target) && !toggle.contains(e.target)) {
-                    dropdown.classList.remove('active');
-                    toggle.setAttribute('aria-expanded', 'false');
+                function getStoredLang() {
+                    try {
+                        var s = localStorage.getItem(LANG_KEY);
+                        if (s && translations[s]) return s;
+                    } catch (e) { }
+                    return null;
                 }
-            });
 
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') {
+                function setStoredLang(lang) {
+                    try {
+                        localStorage.setItem(LANG_KEY, lang);
+                    } catch (e) { }
+                }
+
+                function toggleLangDropdown() {
                     var dropdown = document.getElementById('langDropdown');
                     var toggle = document.getElementById('langToggle');
-                    if (dropdown && dropdown.classList.contains('active')) {
-                        dropdown.classList.remove('active');
-                        if (toggle) toggle.setAttribute('aria-expanded', 'false');
-                    }
+                    if (!dropdown || !toggle) return;
+                    var open = !dropdown.classList.contains('active');
+                    dropdown.classList.toggle('active', open);
+                    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
                 }
-            });
 
-            function initReveal() {
-                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                    document.querySelectorAll('.reveal').forEach(function (el) {
-                        el.classList.add('active');
+                function setLanguage(lang) {
+                    if (!translations[lang]) return;
+                    currentLang = lang;
+                    setStoredLang(lang);
+
+                    document.querySelectorAll('[id^="check-"]').forEach(function (el) {
+                        el.classList.add('hidden');
                     });
-                    return;
-                }
-                var reveals = document.querySelectorAll('.reveal');
-                if (!('IntersectionObserver' in window)) {
-                    reveals.forEach(function (el) { el.classList.add('active'); });
-                    return;
-                }
-                var io = new IntersectionObserver(
-                    function (entries) {
-                        entries.forEach(function (entry) {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('active');
-                                io.unobserve(entry.target);
-                            }
-                        });
-                    },
-                    { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.05 }
-                );
-                reveals.forEach(function (el) { io.observe(el); });
-            }
+                    var checkEl = document.getElementById('check-' + lang);
+                    if (checkEl) checkEl.classList.remove('hidden');
 
-            document.addEventListener('DOMContentLoaded', function () {
-                var stored = getStoredLang();
-                if (stored) {
-                    setLanguage(stored);
-                } else {
-                    setLanguage('en');
-                }
-                initReveal();
-            });
+                    document.querySelectorAll('[data-lang]').forEach(function (btn) {
+                        btn.classList.remove('active');
+                        btn.setAttribute('aria-checked', 'false');
+                    });
+                    var activeBtn = document.querySelector('[data-lang="' + lang + '"]');
+                    if (activeBtn) {
+                        activeBtn.classList.add('active');
+                        activeBtn.setAttribute('aria-checked', 'true');
+                    }
 
-            document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-                anchor.addEventListener('click', function (e) {
-                    var href = this.getAttribute('href');
-                    if (href === '#' || href === '') return;
-                    e.preventDefault();
-                    var target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        if (target.hasAttribute('tabindex') && typeof target.focus === 'function') {
-                            target.focus({ preventScroll: true });
+                    var langLabel = document.getElementById('langLabel');
+                    if (langLabel) langLabel.textContent = lang.toUpperCase();
+
+                    document.querySelectorAll('[data-i18n]').forEach(function (element) {
+                        var key = element.getAttribute('data-i18n');
+                        var t = translations[lang][key];
+                        if (t === undefined) return;
+                        if (/<[a-z][\s\S]*>/i.test(t)) {
+                            element.innerHTML = t;
+                        } else {
+                            element.textContent = t;
+                        }
+                    });
+
+                    document.documentElement.lang = lang;
+
+                    var dropdown = document.getElementById('langDropdown');
+                    var toggle = document.getElementById('langToggle');
+                    if (dropdown) dropdown.classList.remove('active');
+                    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                }
+
+                function toggleMenu() {
+                    var menu = document.getElementById('mobile-menu');
+                    var btn = document.getElementById('mobileMenuBtn');
+                    if (!menu || !btn) return;
+                    var hidden = menu.classList.toggle('hidden');
+                    btn.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+                }
+
+                document.addEventListener('click', function (e) {
+                    var dropdown = document.getElementById('langDropdown');
+                    var toggle = document.getElementById('langToggle');
+                    if (dropdown && toggle && !dropdown.contains(e.target) && !toggle.contains(e.target)) {
+                        dropdown.classList.remove('active');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') {
+                        var dropdown = document.getElementById('langDropdown');
+                        var toggle = document.getElementById('langToggle');
+                        if (dropdown && dropdown.classList.contains('active')) {
+                            dropdown.classList.remove('active');
+                            if (toggle) toggle.setAttribute('aria-expanded', 'false');
                         }
                     }
                 });
-            });
 
-            window.toggleLangDropdown = toggleLangDropdown;
-            window.setLanguage = setLanguage;
-            window.toggleMenu = toggleMenu;
-        })();
+                function initReveal() {
+                    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                        document.querySelectorAll('.reveal').forEach(function (el) {
+                            el.classList.add('active');
+                        });
+                        return;
+                    }
+                    var reveals = document.querySelectorAll('.reveal');
+                    if (!('IntersectionObserver' in window)) {
+                        reveals.forEach(function (el) { el.classList.add('active'); });
+                        return;
+                    }
+                    var io = new IntersectionObserver(
+                        function (entries) {
+                            entries.forEach(function (entry) {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add('active');
+                                    io.unobserve(entry.target);
+                                }
+                            });
+                        },
+                        { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.05 }
+                    );
+                    reveals.forEach(function (el) { io.observe(el); });
+                }
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    var stored = getStoredLang();
+                    if (stored) {
+                        setLanguage(stored);
+                    } else {
+                        setLanguage('en');
+                    }
+                    initReveal();
+                });
+
+                document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+                    anchor.addEventListener('click', function (e) {
+                        var href = this.getAttribute('href');
+                        if (href === '#' || href === '') return;
+                        e.preventDefault();
+                        var target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            if (target.hasAttribute('tabindex') && typeof target.focus === 'function') {
+                                target.focus({ preventScroll: true });
+                            }
+                        }
+                    });
+                });
+
+                window.toggleLangDropdown = toggleLangDropdown;
+                window.setLanguage = setLanguage;
+                window.toggleMenu = toggleMenu;
+            })();
     </script>
 </body>
+
 </html>
