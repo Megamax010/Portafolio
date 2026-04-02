@@ -1581,20 +1581,41 @@
 
                 document.addEventListener('click', function (e) {
                     var dropdown = document.getElementById('langDropdown');
-                    var toggle = document.getElementById('langToggle');
-                    if (dropdown && toggle && !dropdown.contains(e.target) && !toggle.contains(e.target)) {
+                    var langToggle = document.getElementById('langToggle');
+                    var mobileMenu = document.getElementById('mobile-menu');
+                    var mobileBtn = document.getElementById('mobileMenuBtn');
+
+                    // Global Close for language dropdown
+                    if (dropdown && langToggle && !dropdown.contains(e.target) && !langToggle.contains(e.target)) {
                         dropdown.classList.remove('active');
-                        toggle.setAttribute('aria-expanded', 'false');
+                        langToggle.setAttribute('aria-expanded', 'false');
+                    }
+
+                    // Global Close for mobile menu
+                    if (mobileMenu && mobileBtn && !mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            mobileBtn.setAttribute('aria-expanded', 'false');
+                        }
                     }
                 });
 
                 document.addEventListener('keydown', function (e) {
                     if (e.key === 'Escape') {
+                        // Close language dropdown
                         var dropdown = document.getElementById('langDropdown');
-                        var toggle = document.getElementById('langToggle');
+                        var langToggle = document.getElementById('langToggle');
                         if (dropdown && dropdown.classList.contains('active')) {
                             dropdown.classList.remove('active');
-                            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                            if (langToggle) langToggle.setAttribute('aria-expanded', 'false');
+                        }
+
+                        // Close mobile menu
+                        var mobileMenu = document.getElementById('mobile-menu');
+                        var mobileBtn = document.getElementById('mobileMenuBtn');
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
                         }
                     }
                 });
